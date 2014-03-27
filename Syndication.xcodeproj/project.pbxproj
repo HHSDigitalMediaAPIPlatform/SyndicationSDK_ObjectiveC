@@ -46,7 +46,7 @@
 		5628C57A18E4AAFE007714E7 /* SynMediaTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5628C57818E4AAFE007714E7 /* SynMediaTypes.m */; };
 		5628C57D18E4AB29007714E7 /* SynMediaType.h in Headers */ = {isa = PBXBuildFile; fileRef = 5628C57B18E4AB29007714E7 /* SynMediaType.h */; };
 		5628C57E18E4AB29007714E7 /* SynMediaType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5628C57C18E4AB29007714E7 /* SynMediaType.m */; };
-		565C9FCE18DA106600580420 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FC518DA103D00580420 /* libRestKit.a */; };
+		5645958418E4C10900393C86 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5645957C18E4C05B00393C86 /* libRestKit.a */; };
 		565C9FD018DA109F00580420 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FCF18DA109F00580420 /* CFNetwork.framework */; };
 		565C9FD518DA10CD00580420 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD118DA10CD00580420 /* CoreData.framework */; };
 		565C9FD618DA10CD00580420 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD218DA10CD00580420 /* MobileCoreServices.framework */; };
@@ -78,40 +78,33 @@
 			remoteGlobalIDString = 5616824718D2682400120CE4;
 			remoteInfo = Syndication;
 		};
-		565C9FC418DA103D00580420 /* PBXContainerItemProxy */ = {
+		5645957B18E4C05B00393C86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
+			containerPortal = 5645957418E4C05A00393C86 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D1614564E810060A5C5;
 			remoteInfo = RestKit;
 		};
-		565C9FC618DA103D00580420 /* PBXContainerItemProxy */ = {
+		5645957D18E4C05B00393C86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
+			containerPortal = 5645957418E4C05A00393C86 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D2614564E820060A5C5;
 			remoteInfo = RestKitTests;
 		};
-		565C9FC818DA103D00580420 /* PBXContainerItemProxy */ = {
+		5645957F18E4C05B00393C86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
+			containerPortal = 5645957418E4C05A00393C86 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E62145651060060A5C5;
 			remoteInfo = RestKitFramework;
 		};
-		565C9FCA18DA103D00580420 /* PBXContainerItemProxy */ = {
+		5645958118E4C05B00393C86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
+			containerPortal = 5645957418E4C05A00393C86 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E78145651060060A5C5;
 			remoteInfo = RestKitFrameworkTests;
-		};
-		565C9FCC18DA104A00580420 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 25160D1514564E810060A5C5;
-			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -144,7 +137,7 @@
 		5628C57818E4AAFE007714E7 /* SynMediaTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaTypes.m; sourceTree = "<group>"; };
 		5628C57B18E4AB29007714E7 /* SynMediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaType.h; sourceTree = "<group>"; };
 		5628C57C18E4AB29007714E7 /* SynMediaType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaType.m; sourceTree = "<group>"; };
-		565C9FBD18DA103D00580420 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "vendor/RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
+		5645957418E4C05A00393C86 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = vendor/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		565C9FCF18DA109F00580420 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		565C9FD118DA10CD00580420 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		565C9FD218DA10CD00580420 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -166,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				565C9FCE18DA106600580420 /* libRestKit.a in Frameworks */,
+				5645958418E4C10900393C86 /* libRestKit.a in Frameworks */,
 				565C9FD518DA10CD00580420 /* CoreData.framework in Frameworks */,
 				565C9FD618DA10CD00580420 /* MobileCoreServices.framework in Frameworks */,
 				565C9FD718DA10CD00580420 /* Security.framework in Frameworks */,
@@ -287,23 +280,23 @@
 			name = MediaTypes;
 			sourceTree = "<group>";
 		};
+		5645957518E4C05A00393C86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5645957C18E4C05B00393C86 /* libRestKit.a */,
+				5645957E18E4C05B00393C86 /* RestKitTests.octest */,
+				5645958018E4C05B00393C86 /* RestKit.framework */,
+				5645958218E4C05B00393C86 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		565C9FB818DA0FB300580420 /* Vendor Projects */ = {
 			isa = PBXGroup;
 			children = (
-				565C9FBD18DA103D00580420 /* RestKit.xcodeproj */,
+				5645957418E4C05A00393C86 /* RestKit.xcodeproj */,
 			);
 			name = "Vendor Projects";
-			sourceTree = "<group>";
-		};
-		565C9FBE18DA103D00580420 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				565C9FC518DA103D00580420 /* libRestKit.a */,
-				565C9FC718DA103D00580420 /* RestKitTests.octest */,
-				565C9FC918DA103D00580420 /* RestKit.framework */,
-				565C9FCB18DA103D00580420 /* RestKitFrameworkTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		565C9FEE18DA255200580420 /* Languages */ = {
@@ -360,7 +353,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				565C9FCD18DA104A00580420 /* PBXTargetDependency */,
 			);
 			name = Syndication;
 			productName = Syndication;
@@ -406,8 +398,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 565C9FBE18DA103D00580420 /* Products */;
-					ProjectRef = 565C9FBD18DA103D00580420 /* RestKit.xcodeproj */;
+					ProductGroup = 5645957518E4C05A00393C86 /* Products */;
+					ProjectRef = 5645957418E4C05A00393C86 /* RestKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -421,32 +413,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		565C9FC518DA103D00580420 /* libRestKit.a */ = {
+		5645957C18E4C05B00393C86 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRestKit.a;
-			remoteRef = 565C9FC418DA103D00580420 /* PBXContainerItemProxy */;
+			remoteRef = 5645957B18E4C05B00393C86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		565C9FC718DA103D00580420 /* RestKitTests.octest */ = {
+		5645957E18E4C05B00393C86 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitTests.octest;
-			remoteRef = 565C9FC618DA103D00580420 /* PBXContainerItemProxy */;
+			remoteRef = 5645957D18E4C05B00393C86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		565C9FC918DA103D00580420 /* RestKit.framework */ = {
+		5645958018E4C05B00393C86 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RestKit.framework;
-			remoteRef = 565C9FC818DA103D00580420 /* PBXContainerItemProxy */;
+			remoteRef = 5645957F18E4C05B00393C86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		565C9FCB18DA103D00580420 /* RestKitFrameworkTests.octest */ = {
+		5645958218E4C05B00393C86 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitFrameworkTests.octest;
-			remoteRef = 565C9FCA18DA103D00580420 /* PBXContainerItemProxy */;
+			remoteRef = 5645958118E4C05B00393C86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -501,7 +493,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"CTAC\";\ncompanyID=\"com.ctacorp\";\ncompanyURL=\"http://ctacorp.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}/Syndication\"";
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"CTAC\";\ncompanyID=\"com.ctacorp\";\ncompanyURL=\"http://ctacorp.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"${PROJECT_DIR}/Documentation\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}/Syndication\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -540,11 +532,6 @@
 			isa = PBXTargetDependency;
 			target = 5616824718D2682400120CE4 /* Syndication */;
 			targetProxy = 5616828118D26A0400120CE4 /* PBXContainerItemProxy */;
-		};
-		565C9FCD18DA104A00580420 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RestKit;
-			targetProxy = 565C9FCC18DA104A00580420 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -591,6 +578,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"vendor/RestKit/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -622,6 +614,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"vendor/RestKit/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -639,7 +636,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"vendor/RestKit-0.20.3/**",
+					"vendor/RestKit/**/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,7 +657,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"vendor/RestKit-0.20.3/**",
+					"vendor/RestKit/**/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
