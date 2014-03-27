@@ -2,7 +2,6 @@
 //  SyndicationExampleAppTests.m
 //  SyndicationExampleAppTests
 //
-//  Created by hitman on 3/13/14.
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 
