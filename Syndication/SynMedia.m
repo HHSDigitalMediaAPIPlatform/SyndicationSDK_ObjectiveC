@@ -7,7 +7,7 @@
 
 #import "SynMedia.h"
 #import "SynMediaAlternateImage.h"
-#import "SynMediaCampaign.h"
+#import "SynCampaign.h"
 #import "SynMediaTags.h"
 #import "SynResults.h"
 #import "RestKit.h"
@@ -38,28 +38,17 @@
     SYNOUTPUT_DICTIONARY(@"thumbnailUrl", self.mediaThumbnailUrl);
     SYNOUTPUT_DICTIONARY(@"attribution", self.mediaAttribution);
     SYNOUTPUT_DICTIONARY(@"extendedAttributes", self.mediaExtendedAttributes);
+    SYNOUTPUT_DICTIONARY(@"language", [self.mediaLanguage dictionary]);
+    SYNOUTPUT_DICTIONARY(@"source", [self.mediaSource dictionary]);
 
     // "campaigns"
     tmp = [NSMutableArray array];
     if (self.mediaCampaigns) {
-        for (SynMediaCampaign *campaign in self.mediaCampaigns) {
+        for (SynCampaign *campaign in self.mediaCampaigns) {
             [tmp addObject:[campaign dictionary]];
         }
     }
     SYNOUTPUT_DICTIONARY(@"campaigns", tmp);
-    
-    // "language"
-    SYNOUTPUT_DICTIONARY(@"languageId", self.mediaLanguageId);
-    SYNOUTPUT_DICTIONARY(@"languageName", self.mediaLanguageName);
-    SYNOUTPUT_DICTIONARY(@"languageIsoCode", self.mediaLanguageIsoCode);
-    
-    // "source"
-    SYNOUTPUT_DICTIONARY(@"sourceId", self.mediaSourceId);
-    SYNOUTPUT_DICTIONARY(@"sourceName", self.mediaSourceName);
-    SYNOUTPUT_DICTIONARY(@"sourceAcronym", self.mediaSourceAcronym);
-    SYNOUTPUT_DICTIONARY(@"sourceWebsiteUrl", self.mediaSourceWebsiteUrl);
-    SYNOUTPUT_DICTIONARY(@"sourceLargeLogoUrl", self.mediaSourceLargeLogoUrl);
-    SYNOUTPUT_DICTIONARY(@"sourceSmallLogoUrl", self.mediaSourceSmallLogoUrl);
 
     // "tags"
     SYNOUTPUT_DICTIONARY(@"tags", [self.mediaTags dictionary]);
@@ -102,24 +91,19 @@
                                                        @"thumbnailUrl": @"mediaThumbnailUrl",
                                                        @"attribution": @"mediaAttribution",
                                                        @"extendedAttributes": @"mediaExtendedAttributes",
-                                                       
-                                                       // "language"
-                                                       @"language.id": @"mediaLanguageId",
-                                                       @"language.name": @"mediaLanguageName",
-                                                       @"language.isoCode": @"mediaLanguageIsoCode",
-                                                       
-                                                       // "source"
-                                                       @"source.id": @"mediaSourceId",
-                                                       @"source.name": @"mediaSourceName",
-                                                       @"source.websiteUrl": @"mediaSourceWebsiteUrl",
-                                                       @"source.acronym": @"mediaSourceAcronym",
-                                                       @"source.largeLogoUrl": @"mediaSourceLargeLogoUrl",
-                                                       @"source.smallLogoUrl": @"mediaSourceSmallLogoUrl",
                                                        }];
 
+    [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"language"
+                                                                                 toKeyPath:@"mediaLanguage"
+                                                                               withMapping:[SynLanguage mapping]]];
+
+    [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"source"
+                                                                                 toKeyPath:@"mediaSource"
+                                                                               withMapping:[SynSource mapping]]];
+    
     [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"campaigns"
                                                                                  toKeyPath:@"mediaCampaigns"
-                                                                               withMapping:[SynMediaCampaign mapping]]];
+                                                                               withMapping:[SynCampaign mapping]]];
 
     [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"tags"
                                                                                  toKeyPath:@"mediaTags"

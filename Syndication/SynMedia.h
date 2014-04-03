@@ -6,6 +6,8 @@
 //
 
 #import "SynMediaTags.h"
+#import "SynSource.h"
+#import "SynLanguage.h"
 
 @class RKObjectMapping;
 
@@ -30,20 +32,15 @@
 @property (nonatomic, copy) NSString *mediaThumbnailUrl;
 @property (nonatomic, copy) NSString *mediaAttribution;
 @property (nonatomic, copy) NSDictionary *mediaExtendedAttributes;
+
+// "campaign"
 @property (nonatomic, strong) NSArray *mediaCampaigns;
 
 // "language"
-@property (nonatomic, copy) NSString *mediaLanguageId;
-@property (nonatomic, copy) NSString *mediaLanguageName;
-@property (nonatomic, copy) NSString *mediaLanguageIsoCode;
+@property (nonatomic, strong) SynLanguage *mediaLanguage;
 
 // "source"
-@property (nonatomic, copy) NSNumber *mediaSourceId;
-@property (nonatomic, copy) NSString *mediaSourceName;
-@property (nonatomic, copy) NSString *mediaSourceAcronym;
-@property (nonatomic, copy) NSString *mediaSourceWebsiteUrl;
-@property (nonatomic, copy) NSString *mediaSourceLargeLogoUrl;
-@property (nonatomic, copy) NSString *mediaSourceSmallLogoUrl;
+@property (nonatomic, strong) SynSource *mediaSource;
 
 // "tags"
 @property (nonatomic, strong) SynMediaTags *mediaTags;

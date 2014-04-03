@@ -14,8 +14,6 @@
 #import "SynMediaImage.h"
 #import "SynMediaVideo.h"
 
-#import "SynMediaCampaign.h"
-
 @implementation SynMediaResults
 
 #pragma mark - init/dealloc
@@ -117,6 +115,74 @@
      ];
 }
 
+- (void) getMediaRelatedToMediaId:(NSUInteger)mediaId
+                          options:(NSDictionary *)options
+                            success:(void (^)(SynMediaResults *mediaResults))success
+                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
+                                                                                  SYN_OFFSET,
+                                                                                  SYN_MAX,
+                                                                                  SYN_SORT,
+                                                                                  ]];
+    
+    [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu/relatedMedia.json", (unsigned long)mediaId]
+                                         parameters:parameters
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                _results = mappingResult;
+                                                success(self);
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                _results = nil;
+                                                failure(self, error);
+                                            }
+     ];
+}
+
+- (void) getMediaPopularWithOptions:(NSDictionary *)options
+                            success:(void (^)(SynMediaResults *mediaResults))success
+                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
+                                                                                  SYN_OFFSET,
+                                                                                  SYN_MAX,
+                                                                                  ]];
+    
+    [RKObjectManager.sharedManager getObjectsAtPath:@"resources/media/mostPopularMedia.json"
+                                         parameters:parameters
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                _results = mappingResult;
+                                                success(self);
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                _results = nil;
+                                                failure(self, error);
+                                            }
+     ];
+}
+
+- (void) getMediaByCampaignId:(NSUInteger)campaignId
+                      options:(NSDictionary *)options
+                      success:(void (^)(SynMediaResults *mediaResults))success
+                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
+                                                                                  SYN_OFFSET,
+                                                                                  SYN_MAX,
+                                                                                  ]];
+    
+    [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/campaigns/%lu/media.json", (unsigned long)campaignId]
+                                         parameters:parameters
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                _results = mappingResult;
+                                                success(self);
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                _results = nil;
+                                                failure(self, error);
+                                            }
+     ];
+}
 
 - (void) getMediaById:(NSUInteger)mediaId
               success:(void (^)(SynMediaResults *mediaResults))success
