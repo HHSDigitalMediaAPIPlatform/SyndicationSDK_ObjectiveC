@@ -1,5 +1,5 @@
 //
-//  SynMediaType.h
+//  SynMediaEmbed.h
 //  Syndication
 //
 //  Copyright (c) 2014 CTAC. All rights reserved.
@@ -7,10 +7,9 @@
 
 @class RKObjectMapping;
 
-@interface SynMediaType : NSObject
+@interface SynMediaEmbed : NSObject
 
-@property (nonatomic, copy) NSString *mediaTypeName;
-@property (nonatomic, copy) NSString *mediaTypeDescription;
+@property (nonatomic, copy) NSString *embedSnippet;
 
 - (NSDictionary *) dictionary;
 + (RKObjectMapping *) mapping;

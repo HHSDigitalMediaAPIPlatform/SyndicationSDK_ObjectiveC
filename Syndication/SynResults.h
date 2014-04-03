@@ -13,7 +13,28 @@
     id _results;
 }
 
-- (id) initWithMapping:(NSDictionary *)mappingOptions;
+#define SYNOUTPUT_DICTIONARY(_key, _value)                 \
+    if (_value) {                                          \
+        [outputDictionary setObject:_value forKey:_key];   \
+    }
+
++ (SynResults *) resultsWithMapping:(NSDictionary *)mappingOptions;
+
+/**
+ Initialize a `SynResults` object which handles the mapping between our REST API and the Syndication SDK's objects
+ 
+ If we are mapping a simple single level object, mappingOptions can contain:
+ 
+ "class": The class reference of the containing data object
+ "mapping": A NSDictionary of key => value mapping pairs to pass to RestKit
+ 
+ Or if we have a more complex mapping to do, the parent class will handle it and pass us:
+ 
+ "results": An `RKResponseDescriptor` defining our mapping
+ 
+ @param mappingOptions `NSDictionary` containing options defining how the mapping should happen (see below)
+ */
+//- (id) initWithMapping:(NSDictionary *)mappingOptions; XXX RKJ
 
 /**
  Returns an array of dictionaries of the result set requested from the Syndication API
@@ -47,9 +68,9 @@
  Filters passed in options into acceptable parameters to be passed to the Syndication API request
  
  @param options `NSDictionary` of options to be filtered into acceptable parameters
- 
+ @param acceptableKeys `NSArray` of option keys that are valid
  @return An `NSDictionary` containing acceptable parameters to be passed to the Syndication API
  */
-- (NSDictionary *) optionsToParameters:(NSDictionary *)options;
+- (NSDictionary *) optionsToParameters:(NSDictionary *)options acceptableKeys:(NSArray *)acceptableKeys;
 
 @end

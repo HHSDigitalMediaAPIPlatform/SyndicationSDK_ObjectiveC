@@ -13,49 +13,47 @@
 
 #pragma mark - init/dealloc
 
-RKObjectMapping *_resultsMapping;
-RKObjectMapping *_paginationMapping;
-RKResponseDescriptor *_resultsResponseDescriptor;
-RKResponseDescriptor *_paginationResponseDescriptor;
-
-- (id) initWithMapping:(NSDictionary *)mappingOptions
++ (SynResults *) resultsWithMapping:(NSDictionary *)mappingOptions
 {
-    if (self = [super init]) {
-        _resultsMapping = [RKObjectMapping mappingForClass:[mappingOptions objectForKey:@"class"]];
-        [_resultsMapping addAttributeMappingsFromDictionary:[mappingOptions objectForKey:@"mapping"]];
-        
-        _resultsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:_resultsMapping
-                                                                                  method:RKRequestMethodGET
-                                                                             pathPattern:nil
-                                                                                 keyPath:@"results"
-                                                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
-        
-        [RKObjectManager.sharedManager addResponseDescriptor:_resultsResponseDescriptor];
-        
-        
-        _paginationMapping = [RKObjectMapping mappingForClass:[SynPagination class]];
-        [_paginationMapping addAttributeMappingsFromDictionary:@{
-                                                                 @"count": @"count",
-                                                                 @"max": @"max",
-                                                                 @"offset": @"offset",
-                                                                 @"order": @"order",
-                                                                 @"pageNum": @"pageNum",
-                                                                 @"sort": @"sort",
-                                                                 @"total": @"total",
-                                                                 @"totalPages": @"totalPages"
-                                                                 }];
-        
-        _paginationResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:_paginationMapping
-                                                                                     method:RKRequestMethodGET
-                                                                                pathPattern:nil
-                                                                                    keyPath:@"meta.pagination"
-                                                                                statusCodes:[NSIndexSet indexSetWithIndex:200]];
-        
-        
-        [RKObjectManager.sharedManager addResponseDescriptor:_paginationResponseDescriptor];
+    SynResults *results = [[self alloc] init];
+
+    RKObjectMapping *paginationMapping;
+    RKResponseDescriptor *paginationResponseDescriptor;
+    
+    if ([mappingOptions objectForKey:@"results"]) {
+        [RKObjectManager.sharedManager addResponseDescriptor:[mappingOptions objectForKey:@"results"]];
+    } else if ([mappingOptions objectForKey:@"mapping"]) {
+        [RKObjectManager.sharedManager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[mappingOptions objectForKey:@"mapping"]
+                                                                                                          method:RKRequestMethodGET
+                                                                                                     pathPattern:nil
+                                                                                                         keyPath:@"results"
+                                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]]];
+    } else {
+        // This will be a fatal error (no mapping associated!)
     }
     
-    return self;
+    paginationMapping = [RKObjectMapping mappingForClass:[SynPagination class]];
+    [paginationMapping addAttributeMappingsFromDictionary:@{
+                                                            @"count": @"count",
+                                                            @"max": @"max",
+                                                            @"offset": @"offset",
+                                                            @"order": @"order",
+                                                            @"pageNum": @"pageNum",
+                                                            @"sort": @"sort",
+                                                            @"total": @"total",
+                                                            @"totalPages": @"totalPages"
+                                                            }];
+    
+    paginationResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationMapping
+                                                                                method:RKRequestMethodGET
+                                                                           pathPattern:nil
+                                                                               keyPath:@"meta.pagination"
+                                                                           statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    
+    [RKObjectManager.sharedManager addResponseDescriptor:paginationResponseDescriptor];
+
+    return results;
 }
 
 - (NSArray *) results
@@ -88,14 +86,8 @@ RKResponseDescriptor *_paginationResponseDescriptor;
     return [[_results dictionary] objectForKey:@"meta.pagination"];
 }
 
-- (NSDictionary *) optionsToParameters:(NSDictionary *)options
+- (NSDictionary *) optionsToParameters:(NSDictionary *)options acceptableKeys:(NSArray *)acceptableKeys
 {
-    NSArray *acceptableKeys = @[
-                                SYN_OFFSET,
-                                SYN_MAX,
-                                SYN_SORT,
-                                @"id"
-                                ];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
     if (options) {

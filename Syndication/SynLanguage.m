@@ -6,16 +6,31 @@
 //
 
 #import "SynLanguage.h"
+#import "SynResults.h"
+#import "RestKit.h"
 
 @implementation SynLanguage
 
 - (NSDictionary *) dictionary
 {
-    return @{
-             @"id": self.languageID,
-             @"name": self.languageName,
-             @"isoCode": self.languageIsoCode
-             };
+    NSMutableDictionary *outputDictionary = [NSMutableDictionary dictionary];
+
+    SYNOUTPUT_DICTIONARY(@"id", self.languageID);
+    SYNOUTPUT_DICTIONARY(@"name", self.languageName);
+    SYNOUTPUT_DICTIONARY(@"isoCode", self.languageIsoCode);
+    
+    return outputDictionary;
+}
+
++ (RKObjectMapping *) mapping
+{
+    RKObjectMapping *languageMapping = [RKObjectMapping mappingForClass:[SynLanguage class]];
+    [languageMapping addAttributeMappingsFromDictionary:@{
+                                                          @"id": @"languageID",
+                                                          @"name": @"languageName",
+                                                          @"isoCode": @"languageIsoCode",
+                                                          }];
+    return languageMapping;
 }
 
 @end

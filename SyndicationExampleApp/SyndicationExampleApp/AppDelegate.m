@@ -17,22 +17,46 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    Syndication *syn = [[Syndication alloc] init];
-    [syn getLanguagesWithOptions:@{
-
-                                   
-                                   }
-                         success:^(SynLanguages *languages) {
-                             NSLog(@"Success: %@", [languages results]);
-                             NSLog(@"Pagination: %@", [languages pagination]);
-                             
-                             
-                         }
-                         failure:^(SynLanguages *languages, NSError *error) {
-                             NSLog(@"failure: %@", error);
-                             
-                         }
+   // Syndication *syn = [Syndication syndicationWithOptions:@{APIOPT_SYNDICATION_URL: @"http://10.10.10.10/~hitman/b.php"}];
+    Syndication *syn = [Syndication syndication] ;
+                         
+/*    [syn getLanguageById:1
+                  success:^(SynLanguageResults *results) {
+                      NSLog(@"Success: %@", [results results]);
+                      NSLog(@"Pagination: %@", [results pagination]);
+                      
+                  }
+                  failure:^(SynLanguageResults *results, NSError *error) {
+                      NSLog(@"failure: %@", error);
+                      
+                  }
+     ];*/
+    /*[syn getMediaWithOptions:@{
+                               @"mediaType": @"Video",
+                               @"max": @"1",
+                               }
+     
+                     success:^(SynMediaResults *results) {
+                         NSLog(@"Success: %@", [results results]);
+                         NSLog(@"Pagination: %@", [results pagination]);
+                         
+                     }
+                     failure:^(SynMediaResults *results, NSError *error) {
+                         NSLog(@"failure: %@", error);
+                         
+                     }
+     ];*/
+    [syn getMediaEmbedByMediaId:1
+                        options:nil
+                     success:^(NSString *results) {
+                         NSLog(@"%@", results);
+                     }
+                     failure:^(NSError *error) {
+                         NSLog(@"failure: %@", error);
+                         
+                     }
      ];
+
 
     return YES;
 }

@@ -1,5 +1,5 @@
 //
-//  SynMediaType.h
+//  SynMediaCampaign.h
 //  Syndication
 //
 //  Copyright (c) 2014 CTAC. All rights reserved.
@@ -7,10 +7,10 @@
 
 @class RKObjectMapping;
 
-@interface SynMediaType : NSObject
+@interface SynMediaCampaign : NSObject
 
-@property (nonatomic, copy) NSString *mediaTypeName;
-@property (nonatomic, copy) NSString *mediaTypeDescription;
+@property (nonatomic, copy) NSNumber *campaignId;
+@property (nonatomic, copy) NSString *campaignName;
 
 - (NSDictionary *) dictionary;
 + (RKObjectMapping *) mapping;

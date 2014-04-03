@@ -6,9 +6,21 @@
 //
 
 #import "Syndication.h"
+#import "NSString+Equality.h"
+
+#import "SynPagination.h"
 #import "SynResults.h"
 
 #import "SynLanguage.h"
-#import "SynLanguages.h"
+#import "SynLanguageResults.h"
+
 #import "SynMediaType.h"
-#import "SynMediaTypes.h"
+#import "SynMediaTypeResults.h"
+
+#import "SynMedia.h"
+#import "SynMediaResults.h"
+
+#import "SynMediaHTML.h"
+#import "SynMediaImage.h"
+
+#import "SynMediaAlternateImageResults.h"
