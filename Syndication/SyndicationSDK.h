@@ -16,11 +16,14 @@
 
 #import "SynMediaType.h"
 #import "SynMediaTypeResults.h"
-
 #import "SynMedia.h"
 #import "SynMediaResults.h"
-
 #import "SynMediaHTML.h"
 #import "SynMediaImage.h"
-
 #import "SynMediaAlternateImageResults.h"
+
+#import "SynCampaign.h"
+#import "SynCampaignResults.h"
+
+#import "SynSource.h"
+#import "SynSourceResults.h"

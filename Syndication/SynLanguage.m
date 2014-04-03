@@ -15,7 +15,7 @@
 {
     NSMutableDictionary *outputDictionary = [NSMutableDictionary dictionary];
 
-    SYNOUTPUT_DICTIONARY(@"id", self.languageID);
+    SYNOUTPUT_DICTIONARY(@"id", self.languageId);
     SYNOUTPUT_DICTIONARY(@"name", self.languageName);
     SYNOUTPUT_DICTIONARY(@"isoCode", self.languageIsoCode);
     
@@ -26,7 +26,7 @@
 {
     RKObjectMapping *languageMapping = [RKObjectMapping mappingForClass:[SynLanguage class]];
     [languageMapping addAttributeMappingsFromDictionary:@{
-                                                          @"id": @"languageID",
+                                                          @"id": @"languageId",
                                                           @"name": @"languageName",
                                                           @"isoCode": @"languageIsoCode",
                                                           }];

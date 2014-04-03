@@ -9,7 +9,7 @@
 
 @interface SynLanguage : NSObject
 
-@property (nonatomic, copy) NSNumber *languageID;
+@property (nonatomic, copy) NSNumber *languageId;
 @property (nonatomic, copy) NSString *languageName;
 @property (nonatomic, copy) NSString *languageIsoCode;
 

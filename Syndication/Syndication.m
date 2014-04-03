@@ -14,6 +14,11 @@
 
 #import "SynMediaAlternateImageResults.h"
 #import "SynMediaEmbedResults.h"
+#import "SynMediaRatingResults.h"
+
+#import "SynCampaignResults.h"
+
+#import "SynSourceResults.h"
 
 @implementation Syndication
 
@@ -55,7 +60,27 @@ RKObjectManager *_manager;
     _manager = [[RKObjectManager alloc] initWithHTTPClient:client];
 }
 
-#pragma mark - client functions
+#pragma mark - Campaign functions
+
+- (void) getCampaigns:(void (^)(SynCampaignResults *campaignResults))success
+              failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure
+{
+    [self getCampaignsWithOptions:@{ } success:success failure:failure];
+}
+
+- (void) getCampaignsWithOptions:(NSDictionary *)options
+                         success:(void (^)(SynCampaignResults *campaignResults))success
+                         failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure
+{
+    [[SynCampaignResults campaignResults] getCampaignsWithOptions:options success:success failure:failure];
+}
+
+- (void) getCampaignById:(NSUInteger)campaignId
+                 success:(void (^)(SynCampaignResults *mediaResults))success
+                 failure:(void (^)(SynCampaignResults *mediaResults, NSError *error))failure
+{
+    [[SynCampaignResults campaignResults] getCampaignById:campaignId success:success failure:failure];
+}
 
 #pragma mark - Media functions
 
@@ -69,36 +94,52 @@ RKObjectManager *_manager;
                      success:(void (^)(SynMediaResults *mediaResults))success
                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
 {
-    SynMediaResults *mediaResults = [SynMediaResults mediaResults];
-    
-    [mediaResults getMediaWithOptions:options success:success failure:failure];
+    [[SynMediaResults mediaResults] getMediaWithOptions:options success:success failure:failure];
+}
+
+- (void) getMediaRelatedToMediaId:(NSUInteger)mediaId
+                          options:(NSDictionary *)options
+                          success:(void (^)(SynMediaResults *mediaResults))success
+                          failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    [[SynMediaResults mediaResults] getMediaRelatedToMediaId:mediaId options:options success:success failure:failure];
+}
+
+- (void) getMediaPopularWithOptions:(NSDictionary *)options
+                            success:(void (^)(SynMediaResults *mediaResults))success
+                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    [[SynMediaResults mediaResults] getMediaPopularWithOptions:options success:success failure:failure];
+}
+
+- (void) getMediaByCampaignId:(NSUInteger)campaignId
+                      options:(NSDictionary *)options
+                      success:(void (^)(SynMediaResults *mediaResults))success
+                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+{
+    [[SynMediaResults mediaResults] getMediaByCampaignId:campaignId options:options success:success failure:failure];
+
 }
 
 - (void) getMediaById:(NSUInteger)mediaId
               success:(void (^)(SynMediaResults *mediaResults))success
               failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
 {
-    SynMediaResults *mediaResults = [SynMediaResults mediaResults];
-    
-    [mediaResults getMediaById:mediaId success:success failure:failure];
+    [[SynMediaResults mediaResults] getMediaById:mediaId success:success failure:failure];
 }
 
 - (void) searchMedia:(NSString *)searchString
              success:(void (^)(SynMediaResults *mediaResults))success
              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
 {
-    SynMediaResults *mediaResults = [SynMediaResults mediaResults];
-    
-    [mediaResults searchMedia:searchString success:success failure:failure];
+    [[SynMediaResults mediaResults] searchMedia:searchString success:success failure:failure];
 }
 
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
                                   success:(void (^)(SynMediaAlternateImageResults *mediaResults))success
                                   failure:(void (^)(SynMediaAlternateImageResults *mediaResults, NSError *error))failure
 {
-    SynMediaAlternateImageResults *alternateImageResults = [SynMediaAlternateImageResults alternateImageResults];
-    
-    [alternateImageResults getMediaAlternateImagesByMediaId:mediaId success:success failure:failure];
+    [[SynMediaAlternateImageResults alternateImageResults] getMediaAlternateImagesByMediaId:mediaId success:success failure:failure];
 }
 
 - (void) getMediaContentByMediaId:(NSUInteger)mediaId
@@ -122,9 +163,14 @@ RKObjectManager *_manager;
                         success:(void (^)(NSString *embedCode))success
                         failure:(void (^)(NSError *error))failure
 {
-    SynMediaEmbedResults *embedResults = [SynMediaEmbedResults embedResults];
-    
-    [embedResults getMediaEmbedByMediaId:mediaId options:options success:success failure:failure];
+    [[SynMediaEmbedResults embedResults] getMediaEmbedByMediaId:mediaId options:options success:success failure:failure];
+}
+
+- (void) getMediaRatingByMediaId:(NSUInteger)mediaId
+                         success:(void (^)(NSNumber *ratingLikes))success
+                         failure:(void (^)(NSError *error))failure
+{
+    [[SynMediaRatingResults ratingResults] getMediaRatingByMediaId:mediaId success:success failure:failure];
 }
 
 #pragma mark - Languages functions
@@ -132,27 +178,21 @@ RKObjectManager *_manager;
 - (void) getLanguages:(void (^)(SynLanguageResults *languages))success
               failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
 {
-    [self getLanguagesWithOptions:@{ }
-                          success:success
-                          failure:failure];
+    [self getLanguagesWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getLanguagesWithOptions:(NSDictionary *)options
                          success:(void (^)(SynLanguageResults *languages))success
                          failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
 {
-    SynLanguageResults *synLanguageResults = [SynLanguageResults languageResults];
-    
-    [synLanguageResults getLanguagesWithOptions:options success:success failure:failure];
+    [[SynLanguageResults languageResults] getLanguagesWithOptions:options success:success failure:failure];
 }
 
 - (void) getLanguageById:(NSUInteger)languageId
                  success:(void (^)(SynLanguageResults *languages))success
                  failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
 {
-    SynLanguageResults *synLanguageResults = [SynLanguageResults languageResults];
-    
-    [synLanguageResults getLanguageById:languageId success:success failure: failure];
+    [[SynLanguageResults languageResults] getLanguageById:languageId success:success failure: failure];
 }
 
 #pragma mark - MediaTypes functions
@@ -160,10 +200,29 @@ RKObjectManager *_manager;
 - (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypes))success
                failure:(void (^)(SynMediaTypeResults *mediaTypes, NSError *error))failure
 {
-    SynMediaTypeResults *synMediaTypeResults = [[SynMediaTypeResults alloc] init];
-    
-    [synMediaTypeResults getMediaTypes:success
-                         failure:failure];
+    [[SynMediaTypeResults mediaTypeResults] getMediaTypes:success failure:failure];
+}
+
+#pragma mark - Sources functions
+
+- (void) getSources:(void (^)(SynSourceResults *sourceResults))success
+            failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+{
+    [self getSourcesWithOptions:@{ } success:success failure:failure];
+}
+
+- (void) getSourcesWithOptions:(NSDictionary *)options
+                       success:(void (^)(SynSourceResults *sourceResults))success
+                       failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+{
+    [[SynSourceResults sourceResults] getSourcesWithOptions:options success:success failure:failure];
+}
+
+- (void) getSourceById:(NSUInteger)sourceId
+               success:(void (^)(SynSourceResults *sourceResults))success
+               failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+{
+    [[SynSourceResults sourceResults] getSourceById:sourceId success:success failure:failure];
 }
 
 @end

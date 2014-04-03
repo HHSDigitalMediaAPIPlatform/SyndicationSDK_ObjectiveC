@@ -31,27 +31,22 @@
                       
                   }
      ];*/
-    /*[syn getMediaWithOptions:@{
-                               @"mediaType": @"Video",
-                               @"max": @"1",
-                               }
-     
+   /* [syn getSourceById:1
+                          success:^(SynSourceResults *results) {
+                              NSLog(@"Success: %@", [results results]);
+                              NSLog(@"Pagination: %@", [results pagination]);
+                              
+                          }
+                          failure:^(SynSourceResults *results, NSError *error) {
+                              NSLog(@"failure: %@", error);
+                              
+                          }
+     ];*/
+    [syn getMediaById:1
                      success:^(SynMediaResults *results) {
-                         NSLog(@"Success: %@", [results results]);
-                         NSLog(@"Pagination: %@", [results pagination]);
-                         
+                         NSLog(@"%@", [results results]);
                      }
                      failure:^(SynMediaResults *results, NSError *error) {
-                         NSLog(@"failure: %@", error);
-                         
-                     }
-     ];*/
-    [syn getMediaEmbedByMediaId:1
-                        options:nil
-                     success:^(NSString *results) {
-                         NSLog(@"%@", results);
-                     }
-                     failure:^(NSError *error) {
                          NSLog(@"failure: %@", error);
                          
                      }
