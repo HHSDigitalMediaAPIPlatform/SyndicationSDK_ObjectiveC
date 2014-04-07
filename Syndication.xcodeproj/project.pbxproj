@@ -297,7 +297,7 @@
 		5616824D18D2682400120CE4 /* Syndication */ = {
 			isa = PBXGroup;
 			children = (
-				56A95D8018EDC60C0011B636 /* Objects */,
+				56A95D8018EDC60C0011B636 /* Syndication Objects */,
 				5616827118D2685E00120CE4 /* Public SDK */,
 				5616824E18D2682400120CE4 /* Support */,
 			);
@@ -468,7 +468,7 @@
 			name = Campaigns;
 			sourceTree = "<group>";
 		};
-		56A95D8018EDC60C0011B636 /* Objects */ = {
+		56A95D8018EDC60C0011B636 /* Syndication Objects */ = {
 			isa = PBXGroup;
 			children = (
 				56A95D7F18EDC6010011B636 /* Campaigns */,
@@ -478,7 +478,7 @@
 				565C9FF718E46F0A00580420 /* Pagination */,
 				56A95D8918EDCE800011B636 /* Sources */,
 			);
-			name = Objects;
+			name = "Syndication Objects";
 			sourceTree = "<group>";
 		};
 		56A95D8918EDCE800011B636 /* Sources */ = {
