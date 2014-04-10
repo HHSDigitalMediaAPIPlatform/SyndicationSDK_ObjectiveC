@@ -97,6 +97,8 @@
 		56A95D8D18EDCEF40011B636 /* SynSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8B18EDCEF40011B636 /* SynSource.m */; };
 		56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8E18EDCFC00011B636 /* SynSourceResults.h */; };
 		56A95D9118EDCFC00011B636 /* SynSourceResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8F18EDCFC00011B636 /* SynSourceResults.m */; };
+		56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 56B4EB6018F320BF00A99879 /* SynErrors.h */; };
+		56B4EB6318F320BF00A99879 /* SynErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4EB6118F320BF00A99879 /* SynErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +230,8 @@
 		56A95D8B18EDCEF40011B636 /* SynSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynSource.m; sourceTree = "<group>"; };
 		56A95D8E18EDCFC00011B636 /* SynSourceResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynSourceResults.h; sourceTree = "<group>"; };
 		56A95D8F18EDCFC00011B636 /* SynSourceResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynSourceResults.m; sourceTree = "<group>"; };
+		56B4EB6018F320BF00A99879 /* SynErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynErrors.h; sourceTree = "<group>"; };
+		56B4EB6118F320BF00A99879 /* SynErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynErrors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +314,8 @@
 				5616824F18D2682400120CE4 /* Syndication-Prefix.pch */,
 				56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */,
 				56A95CCB18E5B5DF0011B636 /* NSString+Equality.m */,
+				56B4EB6018F320BF00A99879 /* SynErrors.h */,
+				56B4EB6118F320BF00A99879 /* SynErrors.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				565C9FED18DA16C000580420 /* SyndicationSDK.h in Headers */,
 				56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */,
 				56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */,
+				56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */,
 				5616827B18D268ED00120CE4 /* Syndication.h in Headers */,
 				56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */,
 				56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */,
@@ -714,6 +721,7 @@
 				565C9FE418DA152600580420 /* SynResults.m in Sources */,
 				56A95CCD18E5B5DF0011B636 /* NSString+Equality.m in Sources */,
 				5628C57A18E4AAFE007714E7 /* SynMediaTypeResults.m in Sources */,
+				56B4EB6318F320BF00A99879 /* SynErrors.m in Sources */,
 				565C9FF618E46EAB00580420 /* SynPagination.m in Sources */,
 				56A95D7A18EDB1BE0011B636 /* SynMediaRating.m in Sources */,
 				565C9FF218DA269300580420 /* SynLanguage.m in Sources */,

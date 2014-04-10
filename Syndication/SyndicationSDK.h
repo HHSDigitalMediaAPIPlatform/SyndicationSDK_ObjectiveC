@@ -8,6 +8,8 @@
 #import "Syndication.h"
 #import "NSString+Equality.h"
 
+#import "SynErrors.h"
+
 #import "SynPagination.h"
 #import "SynResults.h"
 

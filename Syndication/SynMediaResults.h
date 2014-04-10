@@ -149,11 +149,21 @@
 /**
  Search media from the Syndication API by search string
  
+ The options parameter takes a NSDictionary with the following valid keys.
+ 
+ ***IMPORTANT*** the values *MUST* be Objective C objects (eg: @"1" instead of 1)
+ 
+     max:                            The maximum number of records to return
+     offset:                         The offset of the records set to return for pagination.
+     sort:                           Which field to sort the records by.
+ 
  @param searchString The search query to be used
+ @param options `NSDictionary` containing various options (see Discussion below)
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) searchMedia:(NSString *)searchString
+             options:(NSDictionary *)options
              success:(void (^)(SynMediaResults *mediaResults))success
              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
 

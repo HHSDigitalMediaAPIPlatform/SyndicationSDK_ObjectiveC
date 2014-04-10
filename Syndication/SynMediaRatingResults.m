@@ -8,7 +8,7 @@
 #import "SynMediaRatingResults.h"
 #import "SynMediaRating.h"
 #import "RestKit.h"
-#import "RKMappingErrors.h"
+#import "SynErrors.h"
 
 @implementation SynMediaRatingResults
 
@@ -28,17 +28,17 @@
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu/ratings.json", (unsigned long)mediaId]
                                          parameters:nil
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 SynMediaRating *embedObject = [[self resultsObjects] objectAtIndex:0];
                                                 if (embedObject) {
                                                     success([embedObject ratingLikes]);
                                                 } else {
                                                     NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"Could not decode rating likes from response." };
-                                                    failure([NSError errorWithDomain:RKErrorDomain code:RKMappingErrorNotFound userInfo:userInfo]);
+                                                    failure([NSError errorWithDomain:SynErrorDomain code:SynGeneralError userInfo:userInfo]);
                                                 }
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(error);
                                             }
      ];

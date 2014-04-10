@@ -34,11 +34,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:@"resources/sources.json"
                                          parameters:parameters
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];
@@ -51,11 +51,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/sources/%lu.json", (unsigned long)sourceId]
                                          parameters:nil
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];

@@ -27,11 +27,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu/alternateImages.json", (unsigned long)mediaId]
                                          parameters:nil
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];

@@ -35,11 +35,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:@"resources/languages.json"
                                          parameters:parameters
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];
@@ -52,11 +52,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/languages/%lu.json", (unsigned long)languageId]
                                          parameters:nil
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];

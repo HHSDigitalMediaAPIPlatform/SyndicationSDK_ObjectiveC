@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lsX-BP-rsu">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Heart Disease View Controller - Heart Disease-->
+        <scene sceneID="GZN-Cf-XI7">
+            <objects>
+                <viewController id="Lhw-my-rwl" customClass="HeartDiseaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fJK-yE-le4"/>
+                        <viewControllerLayoutGuide type="bottom" id="DbJ-g7-PyF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oPu-H2-lLO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8a-fh-7IH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W8a-fh-7IH" firstAttribute="top" secondItem="fJK-yE-le4" secondAttribute="bottom" id="BDg-oI-ecY"/>
+                            <constraint firstAttribute="bottom" secondItem="W8a-fh-7IH" secondAttribute="bottom" id="JF8-k2-ycL"/>
+                            <constraint firstItem="W8a-fh-7IH" firstAttribute="leading" secondItem="oPu-H2-lLO" secondAttribute="leading" id="PL3-Sn-sPC"/>
+                            <constraint firstAttribute="trailing" secondItem="W8a-fh-7IH" secondAttribute="trailing" id="eQZ-jn-Erd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Heart Disease" image="TabHeartDisease" id="voW-Vf-C4k"/>
+                    <connections>
+                        <outlet property="webView" destination="W8a-fh-7IH" id="2y4-qJ-gGg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7E-e0-0E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177" y="38"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ns1-uF-fZZ">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="lsX-BP-rsu" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uHV-JR-3kJ">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Lhw-my-rwl" kind="relationship" relationship="viewControllers" id="gTS-SG-1i5"/>
+                        <segue destination="seU-d1-dvs" kind="relationship" relationship="viewControllers" id="IOQ-JO-rT2"/>
+                        <segue destination="HMz-Zq-nbF" kind="relationship" relationship="viewControllers" id="MeF-yI-iqh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b47-bJ-hGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="575"/>
+        </scene>
+        <!--Smoking Table View Controller - Smoking Cessation-->
+        <scene sceneID="j6x-o8-dOp">
+            <objects>
+                <tableViewController id="7yD-hs-lN8" customClass="SmokingTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sny-9V-j2F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SmokingCell" textLabel="3YH-Cc-sbY" detailTextLabel="MYU-ta-Rck" style="IBUITableViewCellStyleSubtitle" id="SBs-cS-1BF">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SBs-cS-1BF" id="qgn-3e-d13">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3YH-Cc-sbY">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MYU-ta-Rck">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mB1-QP-ftn" kind="push" identifier="smokingViewDetail" id="qWb-Gp-R75"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7yD-hs-lN8" id="LwT-Xa-Dui"/>
+                            <outlet property="delegate" destination="7yD-hs-lN8" id="Gj7-Fk-s4r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Smoking Cessation" id="enI-29-iUd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fW4-pq-IUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="717"/>
+        </scene>
+        <!--Search Table View Controller - Search-->
+        <scene sceneID="ch7-3p-Xob">
+            <objects>
+                <tableViewController id="2MQ-9o-d42" customClass="SearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vnx-hd-io9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ALT-hk-tJJ">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="2MQ-9o-d42" id="diK-2E-56w"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" textLabel="hcg-gz-cbI" detailTextLabel="vBN-Jq-kQD" style="IBUITableViewCellStyleSubtitle" id="sdw-SD-u5j">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sdw-SD-u5j" id="65r-Nu-OE3">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcg-gz-cbI">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vBN-Jq-kQD">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2MQ-9o-d42" id="Tkh-Ds-8mc"/>
+                            <outlet property="delegate" destination="2MQ-9o-d42" id="lng-z3-dYM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="Lkq-Lc-gJi"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="gEH-KY-8dN" id="mdN-tH-mxS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b72-CP-Yhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gEH-KY-8dN">
+                    <connections>
+                        <outlet property="delegate" destination="2MQ-9o-d42" id="Q9r-4c-Dr1"/>
+                        <outlet property="searchBar" destination="ALT-hk-tJJ" id="6ID-yf-b2T"/>
+                        <outlet property="searchContentsController" destination="2MQ-9o-d42" id="4HX-HP-b7U"/>
+                        <outlet property="searchResultsDataSource" destination="2MQ-9o-d42" id="DPb-aW-5SF"/>
+                        <outlet property="searchResultsDelegate" destination="2MQ-9o-d42" id="8Jl-0J-DUb"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1701" y="1456"/>
+        </scene>
+        <!--Navigation Controller - Search-->
+        <scene sceneID="JDe-f2-xvC">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="HMz-Zq-nbF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="TabSearch" id="Qti-OV-lax"/>
+                    <navigationItem key="navigationItem" id="O6o-7m-McS"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Klp-Qt-mMF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2MQ-9o-d42" kind="relationship" relationship="rootViewController" id="BP0-IB-yJe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jY4-qh-oiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="1456"/>
+        </scene>
+        <!--Smoking Detail View Controller-->
+        <scene sceneID="8Ud-4h-WYo">
+            <objects>
+                <viewController id="mB1-QP-ftn" customClass="SmokingDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1gX-Nz-pYJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Di9-1N-CUx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8NU-tk-F1A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6MJ-9h-M6Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rcm-ph-a5S"/>
+                    <connections>
+                        <outlet property="webView" destination="6MJ-9h-M6Y" id="9lR-5J-Jaz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGg-bh-ca1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="719"/>
+        </scene>
+        <!--Navigation Controller - Smoking-->
+        <scene sceneID="mMf-T3-rXO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="seU-d1-dvs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Smoking" image="TabSmoking" id="ZUk-TU-aKB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0zQ-ZF-Iea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7yD-hs-lN8" kind="relationship" relationship="rootViewController" id="3V7-1U-2Pp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjE-kM-o86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="717"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TabHeartDisease" width="25" height="22"/>
+        <image name="TabSearch" width="24" height="24"/>
+        <image name="TabSmoking" width="30" height="19"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

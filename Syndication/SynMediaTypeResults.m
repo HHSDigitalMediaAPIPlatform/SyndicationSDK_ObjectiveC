@@ -27,11 +27,11 @@
     [RKObjectManager.sharedManager getObjectsAtPath:@"resources/mediaTypes.json"
                                          parameters:nil
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 success(self);
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(self, error);
                                             }
      ];

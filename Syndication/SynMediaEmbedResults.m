@@ -8,7 +8,7 @@
 #import "SynMediaEmbedResults.h"
 #import "SynMediaEmbed.h"
 #import "RestKit.h"
-#import "RKMappingErrors.h"
+#import "SynErrors.h"
 
 @implementation SynMediaEmbedResults
 
@@ -39,17 +39,17 @@
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu/embed.json", (unsigned long)mediaId]
                                          parameters:parameters
                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                _results = mappingResult;
+                                                [self handleResults:mappingResult];
                                                 SynMediaEmbed *embedObject = [[self resultsObjects] objectAtIndex:0];
                                                 if (embedObject) {
                                                     success([embedObject embedSnippet]);
                                                 } else {
                                                     NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"Could not decode embed from response." };
-                                                    failure([NSError errorWithDomain:RKErrorDomain code:RKMappingErrorNotFound userInfo:userInfo]);
+                                                    failure([NSError errorWithDomain:SynErrorDomain code:SynGeneralError userInfo:userInfo]);
                                                 }
                                             }
                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                _results = nil;
+                                                [self handleResults:nil];
                                                 failure(error);
                                             }
      ];

@@ -15,6 +15,9 @@
 @property (nonatomic, copy) NSString *sort;
 @property (nonatomic, copy) NSNumber *total;
 @property (nonatomic, copy) NSNumber *totalPages;
+@property (nonatomic, copy) NSString *currentUrl;
+@property (nonatomic, copy) NSString *nextUrl;
+@property (nonatomic, copy) NSString *previousUrl;
 
 - (NSDictionary *) dictionary;
 

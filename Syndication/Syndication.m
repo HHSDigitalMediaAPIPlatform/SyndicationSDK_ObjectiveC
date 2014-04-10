@@ -129,10 +129,11 @@ RKObjectManager *_manager;
 }
 
 - (void) searchMedia:(NSString *)searchString
+             options:(NSDictionary *)options
              success:(void (^)(SynMediaResults *mediaResults))success
              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
 {
-    [[SynMediaResults mediaResults] searchMedia:searchString success:success failure:failure];
+    [[SynMediaResults mediaResults] searchMedia:searchString options:options success:success failure:failure];
 }
 
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
