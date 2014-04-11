@@ -2,7 +2,6 @@
 //  SynMediaResults.h
 //  Syndication
 //
-//  Created by hitman on 3/28/14.
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 

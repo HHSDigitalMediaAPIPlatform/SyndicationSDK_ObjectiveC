@@ -6,6 +6,7 @@
 //
 
 #import "SearchTableViewController.h"
+#import "SearchDetailViewController.h"
 
 @interface SearchTableViewController ()
 
@@ -106,15 +107,17 @@
     }
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"searchViewDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SearchDetailViewController *destViewController = segue.destinationViewController;
+        
+        SynMedia *media = (SynMedia *)[_results resultsObjects][indexPath.row];
+        destViewController.mediaId = media.mediaId;
+    }
 }
-*/
 
 @end

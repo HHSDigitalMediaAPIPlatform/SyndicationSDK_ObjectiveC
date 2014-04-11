@@ -147,6 +147,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6Hd-MU-yDF" kind="push" identifier="searchViewDetail" id="EBV-Zq-glZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -171,6 +174,35 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1701" y="1456"/>
+        </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="jJp-f0-50L">
+            <objects>
+                <viewController id="6Hd-MU-yDF" customClass="SearchDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j07-dk-PeQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fdy-K2-Vnl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HXS-2C-ypV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p81-Cv-AtN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QJS-Nb-qPx"/>
+                    <connections>
+                        <outlet property="webView" destination="p81-Cv-AtN" id="iv7-bq-cUL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Mu-nw-U1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2106" y="1460"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="JDe-f2-xvC">

@@ -2,7 +2,6 @@
 //  AppDelegate.h
 //  SyndicationExampleApp
 //
-//  Created by hitman on 4/7/14.
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 

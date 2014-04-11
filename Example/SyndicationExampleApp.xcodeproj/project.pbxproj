@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		56106A1618F7047B002B82D9 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56106A1518F7047B002B82D9 /* SearchTableViewController.m */; };
+		5656C31218F8237D00BC1256 /* SearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5656C31118F8237D00BC1256 /* SearchDetailViewController.m */; };
 		5656CDF118F3028600049F17 /* HeartDiseaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2EC0A18F300CF002322A9 /* HeartDiseaseViewController.m */; };
-		5656CE0118F3039600049F17 /* libSyndication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CDFC18F3038900049F17 /* libSyndication.a */; };
 		5656CE0318F3039F00049F17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0218F3039F00049F17 /* SystemConfiguration.framework */; };
 		5656CE0518F303A500049F17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0418F303A500049F17 /* Security.framework */; };
 		5656CE0718F303AB00049F17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0618F303AB00049F17 /* CoreData.framework */; };
@@ -27,27 +27,12 @@
 		56D2EC0618F2FEFD002322A9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D2EC0518F2FEFD002322A9 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5656CDFB18F3038900049F17 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5616824818D2682400120CE4;
-			remoteInfo = Syndication;
-		};
-		5656CDFD18F3038900049F17 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5616825818D2682400120CE4;
-			remoteInfo = SyndicationTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		56106A1418F7047B002B82D9 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		56106A1518F7047B002B82D9 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
-		5656CDF318F3038800049F17 /* Syndication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Syndication.xcodeproj; path = ../../Syndication.xcodeproj; sourceTree = "<group>"; };
+		5656C31018F8237D00BC1256 /* SearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDetailViewController.h; sourceTree = "<group>"; };
+		5656C31118F8237D00BC1256 /* SearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDetailViewController.m; sourceTree = "<group>"; };
+		5656CDF318F3038800049F17 /* Syndication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Syndication.xcodeproj; path = ../Syndication.xcodeproj; sourceTree = "<group>"; };
 		5656CDFF18F3039300049F17 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../vendor/RestKit/Build/Products/Debug-iphoneos/libRestKit.a"; sourceTree = "<group>"; };
 		5656CE0218F3039F00049F17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5656CE0418F303A500049F17 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -85,7 +70,6 @@
 				5656CE0718F303AB00049F17 /* CoreData.framework in Frameworks */,
 				5656CE0518F303A500049F17 /* Security.framework in Frameworks */,
 				5656CE0318F3039F00049F17 /* SystemConfiguration.framework in Frameworks */,
-				5656CE0118F3039600049F17 /* libSyndication.a in Frameworks */,
 				56D2EB9218F2FE63002322A9 /* CoreGraphics.framework in Frameworks */,
 				56D2EB9418F2FE63002322A9 /* UIKit.framework in Frameworks */,
 				56D2EB9018F2FE63002322A9 /* Foundation.framework in Frameworks */,
@@ -95,13 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5656CDF418F3038800049F17 /* Products */ = {
+		5656C31318F82D8600BC1256 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				5656CDFC18F3038900049F17 /* libSyndication.a */,
-				5656CDFE18F3038900049F17 /* SyndicationTests.xctest */,
+				56D2EB9E18F2FE63002322A9 /* AppDelegate.h */,
+				56D2EB9F18F2FE63002322A9 /* AppDelegate.m */,
 			);
-			name = Products;
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		56C6A78618F70E3300AFE4AC /* Heart Disease */ = {
@@ -129,6 +113,8 @@
 			children = (
 				56106A1418F7047B002B82D9 /* SearchTableViewController.h */,
 				56106A1518F7047B002B82D9 /* SearchTableViewController.m */,
+				5656C31018F8237D00BC1256 /* SearchDetailViewController.h */,
+				5656C31118F8237D00BC1256 /* SearchDetailViewController.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -137,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				56D2EB9518F2FE63002322A9 /* SyndicationExampleApp */,
+				5656CDF318F3038800049F17 /* Syndication.xcodeproj */,
 				56D2EB8E18F2FE63002322A9 /* Frameworks */,
 				56D2EB8D18F2FE63002322A9 /* Products */,
 			);
@@ -170,13 +157,10 @@
 		56D2EB9518F2FE63002322A9 /* SyndicationExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				5656CDF318F3038800049F17 /* Syndication.xcodeproj */,
 				56D2EC0818F3009F002322A9 /* Pages */,
-				56D2EC0718F2FF09002322A9 /* Storyboards */,
-				56D2EB9E18F2FE63002322A9 /* AppDelegate.h */,
-				56D2EB9F18F2FE63002322A9 /* AppDelegate.m */,
-				56D2EBA118F2FE63002322A9 /* Images.xcassets */,
+				5656C31318F82D8600BC1256 /* Delegate */,
 				56D2EB9618F2FE63002322A9 /* Supporting Files */,
+				56D2EBA118F2FE63002322A9 /* Images.xcassets */,
 			);
 			path = SyndicationExampleApp;
 			sourceTree = "<group>";
@@ -184,6 +168,7 @@
 		56D2EB9618F2FE63002322A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56D2EC0718F2FF09002322A9 /* Storyboards */,
 				56D2EB9718F2FE63002322A9 /* SyndicationExampleApp-Info.plist */,
 				56D2EB9818F2FE63002322A9 /* InfoPlist.strings */,
 				56D2EB9B18F2FE63002322A9 /* main.m */,
@@ -249,35 +234,12 @@
 			mainGroup = 56D2EB8318F2FE63002322A9;
 			productRefGroup = 56D2EB8D18F2FE63002322A9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5656CDF418F3038800049F17 /* Products */;
-					ProjectRef = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				56D2EB8B18F2FE63002322A9 /* SyndicationExampleApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5656CDFC18F3038900049F17 /* libSyndication.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSyndication.a;
-			remoteRef = 5656CDFB18F3038900049F17 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5656CDFE18F3038900049F17 /* SyndicationTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SyndicationTests.xctest;
-			remoteRef = 5656CDFD18F3038900049F17 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		56D2EB8A18F2FE63002322A9 /* Resources */ = {
@@ -303,6 +265,7 @@
 				56106A1618F7047B002B82D9 /* SearchTableViewController.m in Sources */,
 				56B4EB6D18F3372000A99879 /* SmokingDetailViewController.m in Sources */,
 				56D2EB9C18F2FE63002322A9 /* main.m in Sources */,
+				5656C31218F8237D00BC1256 /* SearchDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +370,7 @@
 				INFOPLIST_FILE = "SyndicationExampleApp/SyndicationExampleApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/hitman/Development/Syndication/vendor/RestKit/Build/Products/Debug-iphoneos",
+					"../vendor/RestKit/Build/Products/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -433,7 +396,7 @@
 				INFOPLIST_FILE = "SyndicationExampleApp/SyndicationExampleApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/hitman/Development/Syndication/vendor/RestKit/Build/Products/Debug-iphoneos",
+					"../vendor/RestKit/Build/Products/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
