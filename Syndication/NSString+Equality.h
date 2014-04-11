@@ -5,6 +5,9 @@
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 
+/**
+ Provides equality additions to the NSString class
+ */
 @interface NSString (Equality)
 
 /**

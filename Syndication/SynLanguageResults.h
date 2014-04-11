@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Language request operations.
+ */
 @interface SynLanguageResults : SynResults
 
 + (SynLanguageResults *) languageResults;

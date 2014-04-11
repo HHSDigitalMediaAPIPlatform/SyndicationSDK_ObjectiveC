@@ -9,6 +9,11 @@
 
 #import "SynPagination.h"
 
+/**
+ This class represents a set of result data requested from the Syndication API.  It is the base class for all results coming from the Syndication API.
+ 
+ To get an array of objects in this result set returned from the API, use `resultsObjects`.  To get an array of `NSDictionary` representations of the objects in this result set returned from the API, use `results`.
+ */
 @interface SynResults : NSObject
 {
     @protected
@@ -92,7 +97,7 @@
 - (NSDictionary *) optionsToParameters:(NSDictionary *)options acceptableKeys:(NSArray *)acceptableKeys;
 
 /**
- Load more results into our result set (if any)
+ Load more results into our result set (if any).  Note that after a `loadMore` operation, the result set returned contains all the results returned to this point.  So, each call to `loadMore` will append any new results to the existing result set.
  
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynResults` object that was created and the `NSError` object describing the network or parsing error that occurred.

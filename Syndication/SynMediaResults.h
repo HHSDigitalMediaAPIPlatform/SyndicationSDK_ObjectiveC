@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Media request operations.
+ */
 @interface SynMediaResults : SynResults
 
 + (SynMediaResults *) mediaResults;
@@ -86,6 +89,7 @@
      offset:                         The offset of the records set to return for pagination.
      sort:                           Which field to sort the records by.
  
+ @param mediaId The media ID to request information about
  @param options `NSDictionary` containing various options (see Discussion below)
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.

@@ -29,9 +29,99 @@
 #define SYN_MAX                         @"max"
 #define SYN_SORT                        @"sort"
 
+/**
+ The `Syndication` class is the main Syndication SDK class.  It provides an interface for making requests to the Syndication server as well as packaging up the results for you into a `SynResults` (or subclass) object.
+ 
+ ## Simple Syndication Usage
+ 
+ To use the Syndication SDK, simply create a new `Syndication` object and make a request.
+ 
+     #import <Syndication/SyndicationSDK.h>
+ 
+     Syndication *syndication = [Syndication syndication];
+
+ The above code will initialize a `Syndication` object with the default production Syndication API URL and set up any internal objects that need to be created.  You can store this object anywhere in your application.  You only need one `Syndication` object created to manage all of your API requests for your entire application.  All API requests will be made asynchronously and use block-based callbacks.
+ 
+ The SDK uses block callbacks on success and failure.  To do a simple API search:
+ 
+     [syndication searchMedia:@"smoking"
+                      options:@{
+                               @"max": @"10",
+                               }
+                      success:^(SynMediaResults *mediaResults) {
+                          // Success!  Do something with our result set.
+                      }
+                      failure:^(SynMediaResults *mediaResults, NSError *error) {
+                          // Failure.  Handle the NSError we received.
+                      }
+      ];
+ 
+ See the various request methods below for different information you can request from the Syndication API.
+ 
+ ## Handling Results
+ 
+ Most of the `Syndication` request success blocks return some sort of `SynResults` result set object.  For example all of the 'Campaign Request Methods' return a `SynCampaignResults` object.
+ 
+ All result objects returned have `SynResults` as the base class which responds to a base set of methods for walking through the result set returned from the API.
+ 
+ You can get an array of results in either an `NSDictionary` key/value format or actual Objective C objects representing the type of data returned.
+ 
+ For our example above, the `SynMediaResults` object could return an array of 2 `SynMedia` objects:  (Please note we make assumptions that the data set returned has at least 2 objects in it.  You should do your own boundary checking using the provided methods in `SynResults`):
+ 
+     NSArray *mediaObjects = [mediaResults resultsObjects];
+     NSLog(@"First media result name is: %@", mediaObjects[0].mediaName);
+     NSLog(@"Second media result description is: %@", mediaObjects[1].mediaDescription);
+ 
+ You can also have the results returned as an array of `NSDictionary` key/value:
+ 
+     NSArray *mediaObjects = [mediaResults results];
+     NSLog(@"First media result name is: %@", [mediaObjects[0] objectForKey:@"name"]);
+     NSLog(@"Second media result description is: %@", [mediaObjects[1] objectForKey:@"description"]);
+ 
+ If you need to get the total number of results returned in this `SynResults` object, use count:
+ 
+     NSLog(@"The number of results returned was: %d.", [mediaResults count]);
+ 
+ If you need to load more data into the result set (more results exist that need to be loaded):
+ 
+     if ([mediaResults hasMore]) {
+         [mediaResults loadMore:^(SynMediaResults *mediaResults) {
+                            // Do something with the new media results returned
+                        }
+                        failure:^(SynMediaResults *mediaResults, NSError *error) {
+                            // Handle the error
+                        }
+         ];
+ 
+ For more information, see the documentation for the `SynResults` class.
+ 
+ ## Notes
+ 
+ Please note that this project uses ARC.
+
+ */
 @interface Syndication : NSObject
 
+/**
+ Allocate a new `Syndication` object, initialize it using the `options` passed to it, and return it to the caller.
+ 
+ This `Syndication` object will use the options passed into it to specify the URL of the Syndication API to use (and other options):
+ 
+     syndication_url        : Full URL to the Syndication API to use
+     syndication_base       : URL to the base of the Syndication API to use
+ 
+ @param options `NSDictionary` of options to use to initialize the Syndication SDK (see below)
+ @return Returns a fresh `Syndication` object that is ready to use.
+ */
 + (Syndication *) syndicationWithOptions:(NSDictionary *)options;
+
+/**
+ Allocate a new `Syndication` object, initialize it with default values, and return it to the caller.
+ 
+ This `Syndication` object will use the production Syndication API as its data source.
+ 
+ @return Returns a fresh `Syndication` object that is ready to use.
+ */
 + (Syndication *) syndication;
 
 ///-------------------------------------
@@ -166,6 +256,7 @@
      offset:                         The offset of the records set to return for pagination.
      sort:                           Which field to sort the records by.
  
+ @param mediaId The media ID to request information about
  @param options `NSDictionary` containing various options (see Discussion below)
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
@@ -397,7 +488,7 @@
 /**
  Request a specific source object from the Syndication API by source Id
  
- @param campaignId The campaign Id to request information about
+ @param sourceId The campaign Id to request information about
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynSourceResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynSourceResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */

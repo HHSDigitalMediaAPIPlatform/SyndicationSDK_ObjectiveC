@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Source request operations.
+ */
 @interface SynSourceResults : SynResults
 
 + (SynSourceResults *) sourceResults;
@@ -33,7 +36,7 @@
 /**
  Request a specific source object from the Syndication API by source Id
  
- @param campaignId The campaign Id to request information about
+ @param sourceId The campaign Id to request information about
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynSourceResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynSourceResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */

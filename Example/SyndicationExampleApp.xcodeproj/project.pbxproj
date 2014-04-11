@@ -27,6 +27,23 @@
 		56D2EC0618F2FEFD002322A9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D2EC0518F2FEFD002322A9 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		567FF71E18F82F0C0079D3D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5616824818D2682400120CE4;
+			remoteInfo = Syndication;
+		};
+		567FF72018F82F0C0079D3D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5616825818D2682400120CE4;
+			remoteInfo = SyndicationTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		56106A1418F7047B002B82D9 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		56106A1518F7047B002B82D9 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
@@ -86,6 +103,15 @@
 				56D2EB9F18F2FE63002322A9 /* AppDelegate.m */,
 			);
 			name = Delegate;
+			sourceTree = "<group>";
+		};
+		567FF71818F82F0C0079D3D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				567FF71F18F82F0C0079D3D4 /* libSyndication.a */,
+				567FF72118F82F0C0079D3D4 /* SyndicationTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		56C6A78618F70E3300AFE4AC /* Heart Disease */ = {
@@ -234,12 +260,35 @@
 			mainGroup = 56D2EB8318F2FE63002322A9;
 			productRefGroup = 56D2EB8D18F2FE63002322A9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 567FF71818F82F0C0079D3D4 /* Products */;
+					ProjectRef = 5656CDF318F3038800049F17 /* Syndication.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				56D2EB8B18F2FE63002322A9 /* SyndicationExampleApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		567FF71F18F82F0C0079D3D4 /* libSyndication.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSyndication.a;
+			remoteRef = 567FF71E18F82F0C0079D3D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		567FF72118F82F0C0079D3D4 /* SyndicationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SyndicationTests.xctest;
+			remoteRef = 567FF72018F82F0C0079D3D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		56D2EB8A18F2FE63002322A9 /* Resources */ = {

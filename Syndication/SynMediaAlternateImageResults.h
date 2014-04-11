@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Alternate Image Media request operations.
+ */
 @interface SynMediaAlternateImageResults : SynResults
 
 + (SynMediaAlternateImageResults *) alternateImageResults;

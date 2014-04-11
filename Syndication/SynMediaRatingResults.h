@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Media Rating request operations.
+ */
 @interface SynMediaRatingResults : SynResults
 
 + (SynMediaRatingResults *) ratingResults;

@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Embed Media request operations.
+ */
 @interface SynMediaEmbedResults : SynResults
 
 + (SynMediaEmbedResults *) embedResults;

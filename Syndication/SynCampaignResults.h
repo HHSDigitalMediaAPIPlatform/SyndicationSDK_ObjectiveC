@@ -7,6 +7,9 @@
 
 #import "SynResults.h"
 
+/**
+ Results set for the Campaign request operations.
+ */
 @interface SynCampaignResults : SynResults
 
 + (SynCampaignResults *) campaignResults;
