@@ -19,9 +19,6 @@
 #
 #########################
 
-# Ignore our Documentation directory (for now)
-Documentation
-
 #####
 # OS X temporary files that should never be committed
 #

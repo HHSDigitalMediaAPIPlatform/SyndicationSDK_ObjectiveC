@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560D0A8918FD787900387461 /* libSyndication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 567FF71F18F82F0C0079D3D4 /* libSyndication.a */; };
 		56106A1618F7047B002B82D9 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56106A1518F7047B002B82D9 /* SearchTableViewController.m */; };
 		5656C31218F8237D00BC1256 /* SearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5656C31118F8237D00BC1256 /* SearchDetailViewController.m */; };
 		5656CDF118F3028600049F17 /* HeartDiseaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2EC0A18F300CF002322A9 /* HeartDiseaseViewController.m */; };
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560D0A8918FD787900387461 /* libSyndication.a in Frameworks */,
 				5656CE0B18F303B600049F17 /* MobileCoreServices.framework in Frameworks */,
 				5656CE0918F303B100049F17 /* CFNetwork.framework in Frameworks */,
 				5656CE0718F303AB00049F17 /* CoreData.framework in Frameworks */,
@@ -417,10 +419,7 @@
 					..,
 				);
 				INFOPLIST_FILE = "SyndicationExampleApp/SyndicationExampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"../vendor/RestKit/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -443,10 +442,7 @@
 					..,
 				);
 				INFOPLIST_FILE = "SyndicationExampleApp/SyndicationExampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"../vendor/RestKit/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

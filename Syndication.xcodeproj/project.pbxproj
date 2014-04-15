@@ -73,31 +73,31 @@
 		56A95CD418E5C0950011B636 /* SynMediaImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CD218E5C0950011B636 /* SynMediaImage.m */; };
 		56A95D1618E5ED2F0011B636 /* SynMediaResults.m in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CC318E5AFA00011B636 /* SynMediaResults.m */; };
 		56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CC218E5AFA00011B636 /* SynMediaResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3018E6017B0011B636 /* SynMediaVideo.h */; };
+		56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3018E6017B0011B636 /* SynMediaVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3318E6017B0011B636 /* SynMediaVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3118E6017B0011B636 /* SynMediaVideo.m */; };
-		56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3818E621D80011B636 /* SynMediaTags.h */; };
+		56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3818E621D80011B636 /* SynMediaTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3B18E621D80011B636 /* SynMediaTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3918E621D80011B636 /* SynMediaTags.m */; };
-		56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3C18E8A5780011B636 /* SynMediaAlternateImage.h */; };
+		56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3C18E8A5780011B636 /* SynMediaAlternateImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3F18E8A5780011B636 /* SynMediaAlternateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3D18E8A5780011B636 /* SynMediaAlternateImage.m */; };
-		56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D6618ECD4F80011B636 /* SynMediaAlternateImageResults.h */; };
+		56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D6618ECD4F80011B636 /* SynMediaAlternateImageResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D6918ECD4F80011B636 /* SynMediaAlternateImageResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D6718ECD4F80011B636 /* SynMediaAlternateImageResults.m */; };
-		56A95D7018EDA9230011B636 /* SynMediaEmbed.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D6E18EDA9230011B636 /* SynMediaEmbed.h */; };
+		56A95D7018EDA9230011B636 /* SynMediaEmbed.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D6E18EDA9230011B636 /* SynMediaEmbed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D7118EDA9230011B636 /* SynMediaEmbed.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D6F18EDA9230011B636 /* SynMediaEmbed.m */; };
-		56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7218EDA9BF0011B636 /* SynMediaEmbedResults.h */; };
+		56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7218EDA9BF0011B636 /* SynMediaEmbedResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D7518EDA9BF0011B636 /* SynMediaEmbedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D7318EDA9BF0011B636 /* SynMediaEmbedResults.m */; };
-		56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7718EDB1BE0011B636 /* SynMediaRating.h */; };
+		56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7718EDB1BE0011B636 /* SynMediaRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D7A18EDB1BE0011B636 /* SynMediaRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D7818EDB1BE0011B636 /* SynMediaRating.m */; };
-		56A95D7D18EDB21E0011B636 /* SynMediaRatingResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7B18EDB21E0011B636 /* SynMediaRatingResults.h */; };
+		56A95D7D18EDB21E0011B636 /* SynMediaRatingResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D7B18EDB21E0011B636 /* SynMediaRatingResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D7E18EDB21E0011B636 /* SynMediaRatingResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D7C18EDB21E0011B636 /* SynMediaRatingResults.m */; };
-		56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8118EDC68C0011B636 /* SynCampaign.h */; };
+		56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8118EDC68C0011B636 /* SynCampaign.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D8418EDC68C0011B636 /* SynCampaign.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8218EDC68C0011B636 /* SynCampaign.m */; };
-		56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8518EDC7910011B636 /* SynCampaignResults.h */; };
+		56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8518EDC7910011B636 /* SynCampaignResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D8818EDC7910011B636 /* SynCampaignResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8618EDC7910011B636 /* SynCampaignResults.m */; };
-		56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8A18EDCEF40011B636 /* SynSource.h */; };
+		56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8A18EDCEF40011B636 /* SynSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D8D18EDCEF40011B636 /* SynSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8B18EDCEF40011B636 /* SynSource.m */; };
-		56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8E18EDCFC00011B636 /* SynSourceResults.h */; };
+		56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D8E18EDCFC00011B636 /* SynSourceResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D9118EDCFC00011B636 /* SynSourceResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D8F18EDCFC00011B636 /* SynSourceResults.m */; };
-		56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 56B4EB6018F320BF00A99879 /* SynErrors.h */; };
+		56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 56B4EB6018F320BF00A99879 /* SynErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56B4EB6318F320BF00A99879 /* SynErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4EB6118F320BF00A99879 /* SynErrors.m */; };
 /* End PBXBuildFile section */
 
@@ -506,32 +506,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				565C9FED18DA16C000580420 /* SyndicationSDK.h in Headers */,
-				56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */,
-				56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */,
-				56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */,
 				5616827B18D268ED00120CE4 /* Syndication.h in Headers */,
 				56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */,
+				565C9FE318DA152600580420 /* SynResults.h in Headers */,
+				5628C57918E4AAFE007714E7 /* SynMediaTypeResults.h in Headers */,
 				56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */,
 				565C9FF518E46EAB00580420 /* SynPagination.h in Headers */,
-				56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */,
-				56A95D7018EDA9230011B636 /* SynMediaEmbed.h in Headers */,
-				56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */,
-				565C9FE318DA152600580420 /* SynResults.h in Headers */,
-				565C9FF118DA269300580420 /* SynLanguage.h in Headers */,
+				56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */,
 				56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */,
-				565C9FEA18DA163C00580420 /* SynLanguageResults.h in Headers */,
-				5628C57D18E4AB29007714E7 /* SynMediaType.h in Headers */,
-				5628C57918E4AAFE007714E7 /* SynMediaTypeResults.h in Headers */,
-				564595A418E50D3900393C86 /* SynMedia.h in Headers */,
-				56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */,
-				56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */,
-				56A95D1618E5ED2F0011B636 /* SynMediaResults.m in Headers */,
-				56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */,
-				56A95D7D18EDB21E0011B636 /* SynMediaRatingResults.h in Headers */,
-				56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */,
+				56A95D7018EDA9230011B636 /* SynMediaEmbed.h in Headers */,
+				56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */,
 				56A95CD318E5C0950011B636 /* SynMediaImage.h in Headers */,
+				5628C57D18E4AB29007714E7 /* SynMediaType.h in Headers */,
+				565C9FEA18DA163C00580420 /* SynLanguageResults.h in Headers */,
+				56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */,
 				5645959E18E50B5E00393C86 /* SynMediaHTML.h in Headers */,
+				56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */,
+				565C9FF118DA269300580420 /* SynLanguage.h in Headers */,
+				56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */,
+				56A95D7D18EDB21E0011B636 /* SynMediaRatingResults.h in Headers */,
+				56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */,
 				56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */,
+				56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */,
+				56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */,
+				56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */,
+				564595A418E50D3900393C86 /* SynMedia.h in Headers */,
+				56A95D1618E5ED2F0011B636 /* SynMediaResults.m in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
