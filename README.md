@@ -8,20 +8,20 @@ The SDK contains a example iOS app (See "Example App" below) that can be used to
 
 1. Drag **Syndication.framework** into your project under the **Frameworks** folder.
 
-   Select **Copy items into destination group's folder** if you would like the **Syndication.framework** to be copied into your project rather than simply referenced.
+    Select **Copy items into destination group's folder** if you would like the **Syndication.framework** to be copied into your project rather than simply referenced.
 
 2. Under your app's target **Build Phases** tab, add the following libraries to **Link Binary With Libraries**
 
-   SystemConfiguration  
-   Security  
-   CoreData  
-   CFNetwork  
-   MobileCoreServices  
+    SystemConfiguration  
+    Security  
+    CoreData  
+    CFNetwork  
+    MobileCoreServices  
 
 3. Under your app's target **Build Settings** tab, add the following two linker flags to **Other Linker Flags**:
 
-   -ObjC  
-   -all_load
+    -ObjC  
+    -all_load
 
 4. Simple `#import <Syndication/SyndicationSDK.h>` and you are off and running.  You can now create your base object which is used to handle all the requests to the Syndication API.
 
