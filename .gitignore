@@ -19,9 +19,6 @@
 #
 #########################
 
-# We don't commit Documentation (it is distributed in our .zip file)
-Documentation
-
 #####
 # OS X temporary files that should never be committed
 #
