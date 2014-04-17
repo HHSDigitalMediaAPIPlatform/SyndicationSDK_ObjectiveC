@@ -20,7 +20,8 @@
     SYNOUTPUT_DICTIONARY(@"description", self.campaignDescription);
     SYNOUTPUT_DICTIONARY(@"startDate", self.campaignStartDate);
     SYNOUTPUT_DICTIONARY(@"endDate", self.campaignEndDate);
-    SYNOUTPUT_DICTIONARY(@"campaignSource", self.campaignSource);
+    SYNOUTPUT_DICTIONARY(@"source", self.campaignSource);
+    SYNOUTPUT_DICTIONARY(@"contactEmail", self.campaignContactEmail);
     
     return outputDictionary;
 }
@@ -35,7 +36,7 @@
                                                           @"startDate": @"campaignStartDate",
                                                           @"endDate": @"campaignEndDate",
                                                           @"source": @"campaignSource",
-                                                          
+                                                          @"contactEmail", @"campaignContactEmail",                                                          
                                                           }];
     return campaignMapping;
 }

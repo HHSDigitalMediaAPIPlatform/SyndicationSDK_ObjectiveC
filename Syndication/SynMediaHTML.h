@@ -7,6 +7,9 @@
 
 #import "SynMedia.h"
 
+/**
+ Media HTML Information
+ */
 @interface SynMediaHTML : SynMedia
 
 + (RKObjectMapping *) mapping;

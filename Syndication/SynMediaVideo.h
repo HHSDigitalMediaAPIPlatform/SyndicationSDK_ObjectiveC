@@ -7,10 +7,18 @@
 
 #import "SynMedia.h"
 
+/**
+ Media Video Information */
 @interface SynMediaVideo : SynMedia
 
+/// Media Video Youtube Metadata
 @property (nonatomic, copy) NSDictionary *mediaYoutubeMetaData;
 
+/**
+ Get a `NSDictionary` representation of this object
+ 
+ @return `NSDictionary` representation of this object
+ */
 - (NSDictionary *) dictionary;
 + (RKObjectMapping *) mapping;
 
