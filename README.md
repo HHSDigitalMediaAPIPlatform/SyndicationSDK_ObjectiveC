@@ -26,15 +26,13 @@ The SDK contains a example iOS app (See "Example App" below) that can be used to
     -ObjC  
     -all_load
 
-4. Simple `#import <Syndication/SyndicationSDK.h>` and you are off and running.  You can now create your base object which is used to handle all the requests to the Syndication API.
+4. Simple `#import <Syndication/SyndicationSDK.h>` and you are off and running.  You can now create your base [Syndication](http://ctacdevteam.bitbucket.org/syndicationsdk_objectivec/Classes/Syndication.html) object which is used to handle all the requests to the Syndication API.
 
 ---
 
 ## Documentation
 
-Documentation is `appledoc` style and can be found at:
-
-**XXX** link to hosted documentation somewhere.
+Documentation is `appledoc` style and can be found [here](http://ctacdevteam.bitbucket.org/syndicationsdk_objectivec/index.html).
 
 ---
 
