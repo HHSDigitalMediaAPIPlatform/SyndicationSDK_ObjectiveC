@@ -4,7 +4,15 @@ The Syndication SDK can be used to request content from the REST-based Syndicati
 
 The SDK contains a example iOS app (See "Example App" below) that can be used to demonstrate how to create and handle Syndication SDK requests.
 
+---
 [TOC]
+
+---
+## Checking Out Source
+
+To checkout this tree and all vendor branches:
+
+`git clone --recursive https://bitbucket.org/ctacdevteam/syndicationsdk_objectivec.git`
 
 ---
 ## Installation
@@ -12,7 +20,6 @@ The SDK contains a example iOS app (See "Example App" below) that can be used to
 * Drag **Syndication.framework** into your project under the **Frameworks** folder.
 
     Select **Copy items into destination group's folder** if you would like the **Syndication.framework** to be copied into your project rather than simply referenced.  
-
 
 * Under your app's target **Build Phases** tab, add the following libraries to **Link Binary With Libraries**
 
@@ -49,9 +56,3 @@ This app has 3 tabs which contain:
 
 3. A simple search that searches the Media content of the Syndication API for a user-input search query.
 
----
-## Checking Out Source
-
-To checkout this tree and all vendor branches:
-
-`git clone --recursive https://bitbucket.org/ctacdevteam/syndicationsdk_objectivec.git`
