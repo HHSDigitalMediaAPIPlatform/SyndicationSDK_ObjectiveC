@@ -78,6 +78,12 @@
 		56722BB91906A7AF00BDB765 /* SynMediaSocialMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BB71906A7AF00BDB765 /* SynMediaSocialMedia.m */; };
 		56722BBC1906A82400BDB765 /* SynMediaWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BBA1906A82400BDB765 /* SynMediaWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56722BBD1906A82400BDB765 /* SynMediaWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BBB1906A82400BDB765 /* SynMediaWidget.m */; };
+		56722BBF1906ABE300BDB765 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD418DA10CD00580420 /* SystemConfiguration.framework */; };
+		56722BC01906ABE800BDB765 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD318DA10CD00580420 /* Security.framework */; };
+		56722BC11906ABED00BDB765 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD118DA10CD00580420 /* CoreData.framework */; };
+		56722BC21906ABF300BDB765 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FCF18DA109F00580420 /* CFNetwork.framework */; };
+		56722BC31906ABF900BDB765 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD218DA10CD00580420 /* MobileCoreServices.framework */; };
+		56722BC51906AD5F00BDB765 /* SyndicationTestMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */; };
 		56A95CC518E5AFA00011B636 /* SynMediaResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CC318E5AFA00011B636 /* SynMediaResults.m */; };
 		56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95CCD18E5B5DF0011B636 /* NSString+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CCB18E5B5DF0011B636 /* NSString+Equality.m */; };
@@ -224,6 +230,7 @@
 		56722BB71906A7AF00BDB765 /* SynMediaSocialMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaSocialMedia.m; sourceTree = "<group>"; };
 		56722BBA1906A82400BDB765 /* SynMediaWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaWidget.h; sourceTree = "<group>"; };
 		56722BBB1906A82400BDB765 /* SynMediaWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaWidget.m; sourceTree = "<group>"; };
+		56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestMedia.m; sourceTree = "<group>"; };
 		56A95CC218E5AFA00011B636 /* SynMediaResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaResults.h; sourceTree = "<group>"; };
 		56A95CC318E5AFA00011B636 /* SynMediaResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaResults.m; sourceTree = "<group>"; };
 		56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Equality.h"; sourceTree = "<group>"; };
@@ -277,6 +284,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56722BC31906ABF900BDB765 /* MobileCoreServices.framework in Frameworks */,
+				56722BC21906ABF300BDB765 /* CFNetwork.framework in Frameworks */,
+				56722BC11906ABED00BDB765 /* CoreData.framework in Frameworks */,
+				56722BC01906ABE800BDB765 /* Security.framework in Frameworks */,
+				56722BBF1906ABE300BDB765 /* SystemConfiguration.framework in Frameworks */,
 				5616825A18D2682400120CE4 /* XCTest.framework in Frameworks */,
 				5616825D18D2682400120CE4 /* UIKit.framework in Frameworks */,
 				5616825B18D2682400120CE4 /* Foundation.framework in Frameworks */,
@@ -348,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				5616826718D2682400120CE4 /* SyndicationTests.m */,
+				56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */,
 				5616826218D2682400120CE4 /* Supporting Files */,
 			);
 			path = SyndicationTests;
@@ -828,6 +841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56722BC51906AD5F00BDB765 /* SyndicationTestMedia.m in Sources */,
 				5616826818D2682400120CE4 /* SyndicationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

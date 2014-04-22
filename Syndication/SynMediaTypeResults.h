@@ -11,7 +11,7 @@
 
 + (SynMediaTypeResults *) mediaTypeResults;
 
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypes))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypes, NSError *error))failure;
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypesResults))success
+               failure:(void (^)(SynMediaTypeResults *mediaTypesREsults, NSError *error))failure;
 
 @end

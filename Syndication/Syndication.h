@@ -13,8 +13,8 @@
 @class SynSourceResults;
 
 // Base URL to the Syndication API (this can be overridden)
-#define SYNDICATION_DEV_BASE_URL        @"http://ctacdev.com:8090/Syndication"
 #define SYNDICAITON_PRODUCTION_BASE_URL @"https://api.hhs.gov/Syndication"
+#define SYNDICATION_DEV_BASE_URL        @"http://ctacdev.com:8090/Syndication"
 #define SYNDICATION_BASE_URL            SYNDICATION_DEV_BASE_URL
 
 // This SDK can speak to v2 of the Syndication API
@@ -405,8 +405,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynLanguageResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getLanguages:(void (^)(SynLanguageResults *languages))success
-              failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+- (void) getLanguages:(void (^)(SynLanguageResults *languageResults))success
+              failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure;
 
 
 /**
@@ -425,8 +425,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getLanguagesWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynLanguageResults *languages))success
-                         failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+                         success:(void (^)(SynLanguageResults *languageResults))success
+                         failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure;
 
 /**
  Request a specific language from the Syndication API by language ID
@@ -436,8 +436,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getLanguageById:(NSUInteger)languageId
-                 success:(void (^)(SynLanguageResults *languages))success
-                 failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+                 success:(void (^)(SynLanguageResults *languageResults))success
+                 failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure;
 
 ///-------------------------------------
 /// @name MediaType Request Methods
@@ -449,8 +449,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaTypeResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaTypeResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypes))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypes, NSError *error))failure;
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypesResults))success
+               failure:(void (^)(SynMediaTypeResults *mediaTypesResults, NSError *error))failure;
 
 
 ///-------------------------------------

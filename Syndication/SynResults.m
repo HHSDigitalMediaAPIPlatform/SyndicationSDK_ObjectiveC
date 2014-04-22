@@ -104,6 +104,15 @@
     return [_resultsObjectsArray count];
 }
 
+- (NSUInteger) total
+{
+    if (!_paginationObject) {
+        return 0;
+    }
+    
+    return [_paginationObject.total intValue];
+}
+
 - (NSDictionary *) pagination
 {
     return _paginationDictionary;

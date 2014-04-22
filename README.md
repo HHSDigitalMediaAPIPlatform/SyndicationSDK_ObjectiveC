@@ -56,3 +56,27 @@ This app has 3 tabs which contain:
 
 3. A simple search that searches the Media content of the Syndication API for a user-input search query.
 
+---
+## Running Unit Tests
+
+The `Syndication.xcodeproj` project contains several Unit Tests which can be run to test the functionality of the Syndication SDK.
+
+To run the Unit Tests, load the Syndication project into XCode and execute `Product->Test`.
+
+---
+## Building The Syndication.framework bundle
+
+To build the `Syndication.framework` bundle (which includes i386, armv7, armv7s architectures for Universal apps and the iOS Simulator), load the project into XCode and select one of the iOS Simulator targets underneath the `Framework` aggregate target to build.
+
+After you have selected this target, run `Product->Build`.  This will output the `Syndication.framework` in your local DerivedData directory.  To find where this file is, in the Project Navigator, expand the `Products` group, right click on `libSyndication.` and choose **Show in Finder**.  The `Syndication.framework` bundle will be there.
+
+---
+## Releasing a New Version of the Syndication SDK
+
+There is a helper script in the `Scripts` subdirectory of this project.  
+
+First, modify the `CHANGELOG` file in the root of the project to reflect the current version number you wish to release as well as the updated history of changes of this release.
+
+In a shell window, change into the root of the Syndication SDK project and run `Scripts/distribute.sh`.
+
+This will grab the latest version number from the `./CHANGELOG` file and build the `Syndication.framework` along with the Documentation and package it into a file named `SyndicationSDK-<version>.zip` which you can then post to the bitbucket releases page.

@@ -176,30 +176,30 @@ RKObjectManager *_manager;
 
 #pragma mark - Languages functions
 
-- (void) getLanguages:(void (^)(SynLanguageResults *languages))success
-              failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
+- (void) getLanguages:(void (^)(SynLanguageResults *languageResults))success
+              failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
 {
     [self getLanguagesWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getLanguagesWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynLanguageResults *languages))success
-                         failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
+                         success:(void (^)(SynLanguageResults *languageResults))success
+                         failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
 {
     [[SynLanguageResults languageResults] getLanguagesWithOptions:options success:success failure:failure];
 }
 
 - (void) getLanguageById:(NSUInteger)languageId
-                 success:(void (^)(SynLanguageResults *languages))success
-                 failure:(void (^)(SynLanguageResults *languages, NSError *error))failure
+                 success:(void (^)(SynLanguageResults *languageResults))success
+                 failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
 {
     [[SynLanguageResults languageResults] getLanguageById:languageId success:success failure: failure];
 }
 
 #pragma mark - MediaTypes functions
 
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypes))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypes, NSError *error))failure
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypesResults))success
+               failure:(void (^)(SynMediaTypeResults *mediaTypesREsults, NSError *error))failure
 {
     [[SynMediaTypeResults mediaTypeResults] getMediaTypes:success failure:failure];
 }

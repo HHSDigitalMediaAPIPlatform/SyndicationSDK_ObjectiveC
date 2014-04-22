@@ -70,6 +70,8 @@
 	
 	<option value="//api/name/resultsStatus">&nbsp;&nbsp;&nbsp;&nbsp;- resultsStatus</option>
 	
+	<option value="//api/name/total">&nbsp;&nbsp;&nbsp;&nbsp;- total</option>
+	
 	
 	
 </select>
@@ -125,6 +127,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultsObjects">resultsObjects</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultsStatus">resultsStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/total">total</a></span></li>
 	
 </ul></li>
 
@@ -202,6 +206,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/count">&ndash;&nbsp;count</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/total">&ndash;&nbsp;total</a></code>
 	</span>
 	
 	
@@ -797,6 +807,47 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>NSNumber</code> of the HTTP status code of the last result</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SynResults.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/total" title="total"></a>
+	<h3 class="subsubtitle method-title">total</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the total number of <a href="#//api/name/results">results</a> in this set (some which might not have been loaded yet)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)total</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>NSUinteger</code> of the number of total <a href="#//api/name/results">results</a> in the result set</p>
 	</div>
 	
 	

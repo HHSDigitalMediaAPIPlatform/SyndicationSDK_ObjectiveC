@@ -68,6 +68,13 @@
 - (NSUInteger) count;
 
 /**
+ Returns the total number of results in this set (some which might not have been loaded yet)
+ 
+ @return `NSUinteger` of the number of total results in the result set
+ */
+- (NSUInteger) total;
+
+/**
  Check if the result block has more results to load from the Syndication API
  
  @return `BOOL` If the Syndication API has more results to fetch and return

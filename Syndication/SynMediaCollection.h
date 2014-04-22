@@ -7,6 +7,9 @@
 
 #import "SynMedia.h"
 
+/**
+ Media Collection Information
+ */
 @interface SynMediaCollection : SynMedia
 
 /// Media Items
