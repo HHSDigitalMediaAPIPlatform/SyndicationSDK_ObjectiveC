@@ -10,6 +10,7 @@
 
 #import "SynErrors.h"
 
+#import "SynMetaData.h"
 #import "SynPagination.h"
 #import "SynResults.h"
 
@@ -20,8 +21,14 @@
 #import "SynMediaTypeResults.h"
 #import "SynMedia.h"
 #import "SynMediaResults.h"
+#import "SynMediaAudio.h"
+#import "SynMediaCollection.h"
 #import "SynMediaHTML.h"
 #import "SynMediaImage.h"
+#import "SynMediaInfographic.h"
+#import "SynMediaSocialMedia.h"
+#import "SynMediaVideo.h"
+#import "SynMediaWidget.h"
 #import "SynMediaAlternateImageResults.h"
 
 #import "SynCampaign.h"

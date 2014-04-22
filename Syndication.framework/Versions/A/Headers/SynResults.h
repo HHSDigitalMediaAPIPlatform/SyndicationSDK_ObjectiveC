@@ -22,6 +22,7 @@
     NSMutableArray *_resultsObjectsArray;
     NSDictionary *_paginationDictionary;
     SynPagination *_paginationObject;
+    NSDictionary *_metaDataDictionary;
 }
 
 #define SYNOUTPUT_DICTIONARY(_key, _value)                 \
@@ -86,6 +87,20 @@
  @return An `SynPagination` object representing the pagination data requested from the Syndication API
  */
 - (SynPagination *) paginationObject;
+
+/**
+ Returns the HTTP status code of the last result.
+ 
+ @return `NSNumber` of the HTTP status code of the last result
+ */
+- (NSNumber *) resultsStatus;
+
+/**
+ Returns any messages from the server for the last request.
+ 
+ @return `NSString` of the messages from the server from the last request
+ */
+- (NSString *) resultsMessages;
 
 /**
  Filters passed in options into acceptable parameters to be passed to the Syndication API request

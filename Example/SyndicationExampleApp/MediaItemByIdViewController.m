@@ -1,18 +1,18 @@
 //
-//  HeartDiseaseViewController.m
+//  MediaItemByIdViewController.m
 //  SyndicationExampleApp
 //
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 
-#import "HeartDiseaseViewController.h"
+#import "MediaItemByIdViewController.h"
 #import <Syndication/SyndicationSDK.h>
 
-@interface HeartDiseaseViewController ()
+@interface MediaItemByIdViewController ()
 
 @end
 
-@implementation HeartDiseaseViewController
+@implementation MediaItemByIdViewController
 
 - (void) viewDidLoad
 {
@@ -28,7 +28,6 @@
                                       
                                   }
      ];
-    
 }
 
 @end

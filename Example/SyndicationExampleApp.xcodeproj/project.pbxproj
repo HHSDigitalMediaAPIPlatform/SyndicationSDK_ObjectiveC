@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560D0AD418FF188A00387461 /* Syndication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560D0AD318FF188A00387461 /* Syndication.framework */; };
+		560D0B3B19019E6D00387461 /* Syndication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560D0B3A19019E6D00387461 /* Syndication.framework */; };
 		56106A1618F7047B002B82D9 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56106A1518F7047B002B82D9 /* SearchTableViewController.m */; };
 		5656C31218F8237D00BC1256 /* SearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5656C31118F8237D00BC1256 /* SearchDetailViewController.m */; };
-		5656CDF118F3028600049F17 /* HeartDiseaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2EC0A18F300CF002322A9 /* HeartDiseaseViewController.m */; };
+		5656CDF118F3028600049F17 /* MediaItemByIdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2EC0A18F300CF002322A9 /* MediaItemByIdViewController.m */; };
 		5656CE0318F3039F00049F17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0218F3039F00049F17 /* SystemConfiguration.framework */; };
 		5656CE0518F303A500049F17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0418F303A500049F17 /* Security.framework */; };
 		5656CE0718F303AB00049F17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5656CE0618F303AB00049F17 /* CoreData.framework */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		560D0AD318FF188A00387461 /* Syndication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syndication.framework; path = ../Syndication.framework; sourceTree = "<group>"; };
+		560D0B3A19019E6D00387461 /* Syndication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syndication.framework; path = ../Syndication.framework; sourceTree = "<group>"; };
 		56106A1418F7047B002B82D9 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		56106A1518F7047B002B82D9 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		5656C31018F8237D00BC1256 /* SearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDetailViewController.h; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		56D2EBA118F2FE63002322A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		56D2EBA818F2FE63002322A9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		56D2EC0518F2FEFD002322A9 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		56D2EC0918F300CF002322A9 /* HeartDiseaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartDiseaseViewController.h; sourceTree = "<group>"; };
-		56D2EC0A18F300CF002322A9 /* HeartDiseaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartDiseaseViewController.m; sourceTree = "<group>"; };
+		56D2EC0918F300CF002322A9 /* MediaItemByIdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemByIdViewController.h; sourceTree = "<group>"; };
+		56D2EC0A18F300CF002322A9 /* MediaItemByIdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemByIdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				5656CE0B18F303B600049F17 /* MobileCoreServices.framework in Frameworks */,
 				5656CE0918F303B100049F17 /* CFNetwork.framework in Frameworks */,
 				5656CE0718F303AB00049F17 /* CoreData.framework in Frameworks */,
-				560D0AD418FF188A00387461 /* Syndication.framework in Frameworks */,
+				560D0B3B19019E6D00387461 /* Syndication.framework in Frameworks */,
 				5656CE0518F303A500049F17 /* Security.framework in Frameworks */,
 				5656CE0318F3039F00049F17 /* SystemConfiguration.framework in Frameworks */,
 				56D2EB9218F2FE63002322A9 /* CoreGraphics.framework in Frameworks */,
@@ -89,13 +89,13 @@
 			name = Delegate;
 			sourceTree = "<group>";
 		};
-		56C6A78618F70E3300AFE4AC /* Heart Disease */ = {
+		56C6A78618F70E3300AFE4AC /* MediaItemById */ = {
 			isa = PBXGroup;
 			children = (
-				56D2EC0918F300CF002322A9 /* HeartDiseaseViewController.h */,
-				56D2EC0A18F300CF002322A9 /* HeartDiseaseViewController.m */,
+				56D2EC0918F300CF002322A9 /* MediaItemByIdViewController.h */,
+				56D2EC0A18F300CF002322A9 /* MediaItemByIdViewController.m */,
 			);
-			name = "Heart Disease";
+			name = MediaItemById;
 			sourceTree = "<group>";
 		};
 		56C6A78B18F70E3C00AFE4AC /* Smoking */ = {
@@ -140,7 +140,7 @@
 		56D2EB8E18F2FE63002322A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				560D0AD318FF188A00387461 /* Syndication.framework */,
+				560D0B3A19019E6D00387461 /* Syndication.framework */,
 				5656CE0A18F303B600049F17 /* MobileCoreServices.framework */,
 				5656CE0818F303B100049F17 /* CFNetwork.framework */,
 				5656CE0618F303AB00049F17 /* CoreData.framework */,
@@ -188,7 +188,7 @@
 		56D2EC0818F3009F002322A9 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				56C6A78618F70E3300AFE4AC /* Heart Disease */,
+				56C6A78618F70E3300AFE4AC /* MediaItemById */,
 				56C6A78B18F70E3C00AFE4AC /* Smoking */,
 				56C6A78C18F70E4300AFE4AC /* Search */,
 			);
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5656CDF118F3028600049F17 /* HeartDiseaseViewController.m in Sources */,
+				5656CDF118F3028600049F17 /* MediaItemByIdViewController.m in Sources */,
 				5656CE0E18F30D6400049F17 /* SmokingTableViewController.m in Sources */,
 				56D2EBA018F2FE63002322A9 /* AppDelegate.m in Sources */,
 				56106A1618F7047B002B82D9 /* SearchTableViewController.m in Sources */,

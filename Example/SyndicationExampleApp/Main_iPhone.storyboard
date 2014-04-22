@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lsX-BP-rsu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lsX-BP-rsu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Heart Disease View Controller - Heart Disease-->
+        <!--Media Item By Id View Controller - Media Item By Id-->
         <scene sceneID="GZN-Cf-XI7">
             <objects>
-                <viewController id="Lhw-my-rwl" customClass="HeartDiseaseViewController" sceneMemberID="viewController">
+                <viewController id="Lhw-my-rwl" customClass="MediaItemByIdViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fJK-yE-le4"/>
                         <viewControllerLayoutGuide type="bottom" id="DbJ-g7-PyF"/>
@@ -30,7 +30,7 @@
                             <constraint firstAttribute="trailing" secondItem="W8a-fh-7IH" secondAttribute="trailing" id="eQZ-jn-Erd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Heart Disease" image="TabHeartDisease" id="voW-Vf-C4k"/>
+                    <tabBarItem key="tabBarItem" title="Media Item By Id" image="TabHeartDisease" id="voW-Vf-C4k"/>
                     <connections>
                         <outlet property="webView" destination="W8a-fh-7IH" id="2y4-qJ-gGg"/>
                     </connections>

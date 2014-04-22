@@ -10,9 +10,14 @@
 #import "SynMediaResults.h"
 #import "RestKit.h"
 
+#import "SynMediaAudio.h"
+#import "SynMediaCollection.h"
 #import "SynMediaHTML.h"
 #import "SynMediaImage.h"
+#import "SynMediaInfographic.h"
+#import "SynMediaSocialMedia.h"
 #import "SynMediaVideo.h"
+#import "SynMediaWidget.h"
 
 @implementation SynMediaResults
 
@@ -25,12 +30,22 @@
     
     // Our dynamic mapping based on mediaType
     [dynamicMapping setObjectMappingForRepresentationBlock:^RKObjectMapping *(id representation) {
-        if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Html"]) {
+        if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Audio"]) {
+            return [SynMediaAudio mapping];
+        } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Collection"]) {
+            return [SynMediaCollection mapping];
+        } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Html"]) {
             return [SynMediaHTML mapping];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Image"]) {
             return [SynMediaImage mapping];
+        } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Infographic"]) {
+            return [SynMediaInfographic mapping];
+        } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"SocialMedia"]) {
+            return [SynMediaSocialMedia mapping];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Video"]) {
             return [SynMediaVideo mapping];
+        } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Widget"]) {
+            return [SynMediaWidget mapping];
         }
         return nil;
     }];
@@ -51,7 +66,7 @@
                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
-                                                                                  @"mediaType",
+                                                                                  @"mediaTypes",
                                                                                   @"name",
                                                                                   @"nameContains",
                                                                                   @"descriptionContains",

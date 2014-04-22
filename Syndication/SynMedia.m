@@ -47,8 +47,8 @@
         for (SynCampaign *campaign in self.mediaCampaigns) {
             [tmp addObject:[campaign dictionary]];
         }
+        SYNOUTPUT_DICTIONARY(@"campaigns", tmp);
     }
-    SYNOUTPUT_DICTIONARY(@"campaigns", tmp);
 
     // "tags"
     SYNOUTPUT_DICTIONARY(@"tags", [self.mediaTags dictionary]);
@@ -59,8 +59,8 @@
         for (SynMediaAlternateImage *alternateImage in self.mediaAlternateImages) {
             [tmp addObject:[alternateImage dictionary]];
         }
+        SYNOUTPUT_DICTIONARY(@"alternateImages", tmp);
     }
-    SYNOUTPUT_DICTIONARY(@"alternateImages", tmp);
     
     return outputDictionary;
 }

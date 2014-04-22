@@ -5,6 +5,8 @@
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 
+@class RKObjectMapping;
+
 /**
  Pagination data for this result set
  */
@@ -49,5 +51,6 @@
  @return `NSDictionary` representation of this pagination object
  */
 - (NSDictionary *) dictionary;
++ (RKObjectMapping *) mapping;
 
 @end

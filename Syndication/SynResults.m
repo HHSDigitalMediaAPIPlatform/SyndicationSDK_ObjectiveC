@@ -9,6 +9,7 @@
 #import "SynResults.h"
 #import "RestKit.h"
 #import "Syndication.h"
+#import "SynMetaData.h"
 
 @implementation SynResults
 
@@ -30,29 +31,17 @@
         // This will be a fatal error (no mapping associated!)
     }
     
-    RKObjectMapping *paginationMapping = [RKObjectMapping mappingForClass:[SynPagination class]];
-    [paginationMapping addAttributeMappingsFromDictionary:@{
-                                                            @"count": @"count",
-                                                            @"max": @"max",
-                                                            @"offset": @"offset",
-                                                            @"order": @"order",
-                                                            @"pageNum": @"pageNum",
-                                                            @"sort": @"sort",
-                                                            @"total": @"total",
-                                                            @"totalPages": @"totalPages",
-                                                            @"currentUrl": @"currentUrl",
-                                                            @"nextUrl": @"nextUrl",
-                                                            @"previousUrl": @"previousUrl",
-                                                            }];
-    
-    RKResponseDescriptor *paginationResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationMapping
+    [RKObjectManager.sharedManager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[SynPagination mapping]
                                                                                                       method:RKRequestMethodGET
                                                                                                  pathPattern:nil
                                                                                                      keyPath:@"meta.pagination"
-                                                                                                 statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    [RKObjectManager.sharedManager addResponseDescriptor:paginationResponseDescriptor];
+                                                                                                 statusCodes:[NSIndexSet indexSetWithIndex:200]]];
 
+    [RKObjectManager.sharedManager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[SynMetaData mapping]
+                                                                                                      method:RKRequestMethodGET
+                                                                                                 pathPattern:nil
+                                                                                                     keyPath:@"meta"
+                                                                                                 statusCodes:[NSIndexSet indexSetWithIndex:200]]];
     return results;
 }
 
@@ -90,6 +79,9 @@
     // And our pagination data
     _paginationDictionary = [[[results dictionary] objectForKey:@"meta.pagination"] dictionary];
     _paginationObject = [[results dictionary] objectForKey:@"meta.pagination"];
+    
+    // And our Meta Data
+    _metaDataDictionary = [[[results dictionary] objectForKey:@"meta"] dictionary];
 }
 
 - (void) handleResults:(RKMappingResult *)results
@@ -120,6 +112,16 @@
 - (SynPagination *) paginationObject
 {
     return _paginationObject;
+}
+
+- (NSNumber *) resultsStatus
+{
+    return [_metaDataDictionary objectForKey:@"status"];
+}
+
+- (NSString *) resultsMessages
+{
+    return [_metaDataDictionary objectForKey:@"messages"];
 }
 
 - (NSDictionary *) optionsToParameters:(NSDictionary *)options acceptableKeys:(NSArray *)acceptableKeys

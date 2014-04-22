@@ -7,6 +7,7 @@
 
 #import "SynPagination.h"
 #import "SynResults.h"
+#import "RestKit.h"
 
 @implementation SynPagination
 
@@ -27,6 +28,25 @@
     SYNOUTPUT_DICTIONARY(@"previousUrl", self.previousUrl);
     
     return outputDictionary;
+}
+
++ (RKObjectMapping *) mapping
+{
+    RKObjectMapping *paginationMapping = [RKObjectMapping mappingForClass:[SynPagination class]];
+    [paginationMapping addAttributeMappingsFromDictionary:@{
+                                                            @"count": @"count",
+                                                            @"max": @"max",
+                                                            @"offset": @"offset",
+                                                            @"order": @"order",
+                                                            @"pageNum": @"pageNum",
+                                                            @"sort": @"sort",
+                                                            @"total": @"total",
+                                                            @"totalPages": @"totalPages",
+                                                            @"currentUrl": @"currentUrl",
+                                                            @"nextUrl": @"nextUrl",
+                                                            @"previousUrl": @"previousUrl",
+                                                            }];
+    return paginationMapping;
 }
 
 @end

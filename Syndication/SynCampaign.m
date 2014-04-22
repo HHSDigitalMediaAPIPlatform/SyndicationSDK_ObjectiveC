@@ -36,7 +36,7 @@
                                                           @"startDate": @"campaignStartDate",
                                                           @"endDate": @"campaignEndDate",
                                                           @"source": @"campaignSource",
-                                                          @"contactEmail", @"campaignContactEmail",                                                          
+                                                          @"contactEmail": @"campaignContactEmail",                                                          
                                                           }];
     return campaignMapping;
 }

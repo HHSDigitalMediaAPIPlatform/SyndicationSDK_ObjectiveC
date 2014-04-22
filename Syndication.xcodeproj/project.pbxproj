@@ -34,6 +34,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		560D0B3F1901A41800387461 /* SynMetaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 560D0B3D1901A41800387461 /* SynMetaData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		560D0B401901A41800387461 /* SynMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 560D0B3E1901A41800387461 /* SynMetaData.m */; };
 		5616824C18D2682400120CE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616824B18D2682400120CE4 /* Foundation.framework */; };
 		5616825A18D2682400120CE4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616825918D2682400120CE4 /* XCTest.framework */; };
 		5616825B18D2682400120CE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616824B18D2682400120CE4 /* Foundation.framework */; };
@@ -66,6 +68,16 @@
 		565C9FF218DA269300580420 /* SynLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C9FF018DA269300580420 /* SynLanguage.m */; };
 		565C9FF518E46EAB00580420 /* SynPagination.h in Headers */ = {isa = PBXBuildFile; fileRef = 565C9FF318E46EAB00580420 /* SynPagination.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565C9FF618E46EAB00580420 /* SynPagination.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C9FF418E46EAB00580420 /* SynPagination.m */; };
+		56722BA81906A20500BDB765 /* SynMediaCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BA61906A20500BDB765 /* SynMediaCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BA91906A20500BDB765 /* SynMediaCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BA71906A20500BDB765 /* SynMediaCollection.m */; };
+		56722BB01906A67A00BDB765 /* SynMediaAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BAE1906A67A00BDB765 /* SynMediaAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BB11906A67A00BDB765 /* SynMediaAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BAF1906A67A00BDB765 /* SynMediaAudio.m */; };
+		56722BB41906A75800BDB765 /* SynMediaInfographic.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BB21906A75800BDB765 /* SynMediaInfographic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BB51906A75800BDB765 /* SynMediaInfographic.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BB31906A75800BDB765 /* SynMediaInfographic.m */; };
+		56722BB81906A7AF00BDB765 /* SynMediaSocialMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BB61906A7AF00BDB765 /* SynMediaSocialMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BB91906A7AF00BDB765 /* SynMediaSocialMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BB71906A7AF00BDB765 /* SynMediaSocialMedia.m */; };
+		56722BBC1906A82400BDB765 /* SynMediaWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BBA1906A82400BDB765 /* SynMediaWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BBD1906A82400BDB765 /* SynMediaWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BBB1906A82400BDB765 /* SynMediaWidget.m */; };
 		56A95CC518E5AFA00011B636 /* SynMediaResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CC318E5AFA00011B636 /* SynMediaResults.m */; };
 		56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95CCD18E5B5DF0011B636 /* NSString+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CCB18E5B5DF0011B636 /* NSString+Equality.m */; };
@@ -166,6 +178,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		560D0B3D1901A41800387461 /* SynMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMetaData.h; sourceTree = "<group>"; };
+		560D0B3E1901A41800387461 /* SynMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMetaData.m; sourceTree = "<group>"; };
 		5616824818D2682400120CE4 /* libSyndication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSyndication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5616824B18D2682400120CE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5616824F18D2682400120CE4 /* Syndication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Syndication-Prefix.pch"; sourceTree = "<group>"; };
@@ -200,6 +214,16 @@
 		565C9FF018DA269300580420 /* SynLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynLanguage.m; sourceTree = "<group>"; };
 		565C9FF318E46EAB00580420 /* SynPagination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynPagination.h; sourceTree = "<group>"; };
 		565C9FF418E46EAB00580420 /* SynPagination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynPagination.m; sourceTree = "<group>"; };
+		56722BA61906A20500BDB765 /* SynMediaCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaCollection.h; sourceTree = "<group>"; };
+		56722BA71906A20500BDB765 /* SynMediaCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaCollection.m; sourceTree = "<group>"; };
+		56722BAE1906A67A00BDB765 /* SynMediaAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaAudio.h; sourceTree = "<group>"; };
+		56722BAF1906A67A00BDB765 /* SynMediaAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaAudio.m; sourceTree = "<group>"; };
+		56722BB21906A75800BDB765 /* SynMediaInfographic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaInfographic.h; sourceTree = "<group>"; };
+		56722BB31906A75800BDB765 /* SynMediaInfographic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaInfographic.m; sourceTree = "<group>"; };
+		56722BB61906A7AF00BDB765 /* SynMediaSocialMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaSocialMedia.h; sourceTree = "<group>"; };
+		56722BB71906A7AF00BDB765 /* SynMediaSocialMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaSocialMedia.m; sourceTree = "<group>"; };
+		56722BBA1906A82400BDB765 /* SynMediaWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaWidget.h; sourceTree = "<group>"; };
+		56722BBB1906A82400BDB765 /* SynMediaWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaWidget.m; sourceTree = "<group>"; };
 		56A95CC218E5AFA00011B636 /* SynMediaResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaResults.h; sourceTree = "<group>"; };
 		56A95CC318E5AFA00011B636 /* SynMediaResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaResults.m; sourceTree = "<group>"; };
 		56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Equality.h"; sourceTree = "<group>"; };
@@ -376,9 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				564595A018E50D1A00393C86 /* Base */,
-				56A95CD018E5C05A0011B636 /* Image */,
-				5645959B18E50B4400393C86 /* HTML */,
-				56A95D2C18E6016A0011B636 /* Video */,
+				56722BBE1906A87600BDB765 /* Subclasses */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -436,13 +458,75 @@
 			name = Languages;
 			sourceTree = "<group>";
 		};
-		565C9FF718E46F0A00580420 /* Pagination */ = {
+		565C9FF718E46F0A00580420 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
 				565C9FF318E46EAB00580420 /* SynPagination.h */,
 				565C9FF418E46EAB00580420 /* SynPagination.m */,
+				560D0B3D1901A41800387461 /* SynMetaData.h */,
+				560D0B3E1901A41800387461 /* SynMetaData.m */,
 			);
-			name = Pagination;
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		56722BA51906A1F100BDB765 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				56722BA61906A20500BDB765 /* SynMediaCollection.h */,
+				56722BA71906A20500BDB765 /* SynMediaCollection.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		56722BAA1906A63200BDB765 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				56722BAE1906A67A00BDB765 /* SynMediaAudio.h */,
+				56722BAF1906A67A00BDB765 /* SynMediaAudio.m */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		56722BAB1906A63500BDB765 /* Infographic */ = {
+			isa = PBXGroup;
+			children = (
+				56722BB21906A75800BDB765 /* SynMediaInfographic.h */,
+				56722BB31906A75800BDB765 /* SynMediaInfographic.m */,
+			);
+			name = Infographic;
+			sourceTree = "<group>";
+		};
+		56722BAC1906A63F00BDB765 /* SocialMedia */ = {
+			isa = PBXGroup;
+			children = (
+				56722BB61906A7AF00BDB765 /* SynMediaSocialMedia.h */,
+				56722BB71906A7AF00BDB765 /* SynMediaSocialMedia.m */,
+			);
+			name = SocialMedia;
+			sourceTree = "<group>";
+		};
+		56722BAD1906A64700BDB765 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				56722BBA1906A82400BDB765 /* SynMediaWidget.h */,
+				56722BBB1906A82400BDB765 /* SynMediaWidget.m */,
+			);
+			name = Widget;
+			sourceTree = "<group>";
+		};
+		56722BBE1906A87600BDB765 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				56722BAA1906A63200BDB765 /* Audio */,
+				56722BA51906A1F100BDB765 /* Collection */,
+				5645959B18E50B4400393C86 /* HTML */,
+				56A95CD018E5C05A0011B636 /* Image */,
+				56722BAB1906A63500BDB765 /* Infographic */,
+				56722BAC1906A63F00BDB765 /* SocialMedia */,
+				56A95D2C18E6016A0011B636 /* Video */,
+				56722BAD1906A64700BDB765 /* Widget */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 		56A95CD018E5C05A0011B636 /* Image */ = {
@@ -481,7 +565,7 @@
 				565C9FEE18DA255200580420 /* Languages */,
 				5645959518E4D76F00393C86 /* Media */,
 				5628C57618E4AAE2007714E7 /* MediaTypes */,
-				565C9FF718E46F0A00580420 /* Pagination */,
+				565C9FF718E46F0A00580420 /* Meta */,
 				56A95D8918EDCE800011B636 /* Sources */,
 			);
 			name = "Syndication Objects";
@@ -509,18 +593,23 @@
 				5616827B18D268ED00120CE4 /* Syndication.h in Headers */,
 				56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */,
 				565C9FE318DA152600580420 /* SynResults.h in Headers */,
+				56722BBC1906A82400BDB765 /* SynMediaWidget.h in Headers */,
+				56722BB81906A7AF00BDB765 /* SynMediaSocialMedia.h in Headers */,
+				56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */,
 				5628C57918E4AAFE007714E7 /* SynMediaTypeResults.h in Headers */,
+				56A95CD318E5C0950011B636 /* SynMediaImage.h in Headers */,
+				56722BB41906A75800BDB765 /* SynMediaInfographic.h in Headers */,
+				56722BA81906A20500BDB765 /* SynMediaCollection.h in Headers */,
 				56A95D9018EDCFC00011B636 /* SynSourceResults.h in Headers */,
+				56722BB01906A67A00BDB765 /* SynMediaAudio.h in Headers */,
+				5645959E18E50B5E00393C86 /* SynMediaHTML.h in Headers */,
 				565C9FF518E46EAB00580420 /* SynPagination.h in Headers */,
 				56B4EB6218F320BF00A99879 /* SynErrors.h in Headers */,
-				56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */,
 				56A95D7018EDA9230011B636 /* SynMediaEmbed.h in Headers */,
 				56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */,
-				56A95CD318E5C0950011B636 /* SynMediaImage.h in Headers */,
 				5628C57D18E4AB29007714E7 /* SynMediaType.h in Headers */,
 				565C9FEA18DA163C00580420 /* SynLanguageResults.h in Headers */,
 				56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */,
-				5645959E18E50B5E00393C86 /* SynMediaHTML.h in Headers */,
 				56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */,
 				565C9FF118DA269300580420 /* SynLanguage.h in Headers */,
 				56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */,
@@ -529,6 +618,7 @@
 				56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */,
 				56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */,
 				56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */,
+				560D0B3F1901A41800387461 /* SynMetaData.h in Headers */,
 				56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */,
 				564595A418E50D3900393C86 /* SynMedia.h in Headers */,
 				56A95D1618E5ED2F0011B636 /* SynMediaResults.m in Headers */,
@@ -704,13 +794,17 @@
 				56A95D8D18EDCEF40011B636 /* SynSource.m in Sources */,
 				56A95CD418E5C0950011B636 /* SynMediaImage.m in Sources */,
 				56A95D7518EDA9BF0011B636 /* SynMediaEmbedResults.m in Sources */,
+				56722BBD1906A82400BDB765 /* SynMediaWidget.m in Sources */,
 				5645959F18E50B5E00393C86 /* SynMediaHTML.m in Sources */,
 				56A95D9118EDCFC00011B636 /* SynSourceResults.m in Sources */,
 				56A95D3B18E621D80011B636 /* SynMediaTags.m in Sources */,
 				5628C57E18E4AB29007714E7 /* SynMediaType.m in Sources */,
 				56A95D8818EDC7910011B636 /* SynCampaignResults.m in Sources */,
+				560D0B401901A41800387461 /* SynMetaData.m in Sources */,
 				56A95D3318E6017B0011B636 /* SynMediaVideo.m in Sources */,
 				5616827918D268A100120CE4 /* Syndication.m in Sources */,
+				56722BA91906A20500BDB765 /* SynMediaCollection.m in Sources */,
+				56722BB91906A7AF00BDB765 /* SynMediaSocialMedia.m in Sources */,
 				56A95D8418EDC68C0011B636 /* SynCampaign.m in Sources */,
 				56A95D7118EDA9230011B636 /* SynMediaEmbed.m in Sources */,
 				565C9FEB18DA163C00580420 /* SynLanguageResults.m in Sources */,
@@ -724,6 +818,8 @@
 				56B4EB6318F320BF00A99879 /* SynErrors.m in Sources */,
 				565C9FF618E46EAB00580420 /* SynPagination.m in Sources */,
 				56A95D7A18EDB1BE0011B636 /* SynMediaRating.m in Sources */,
+				56722BB11906A67A00BDB765 /* SynMediaAudio.m in Sources */,
+				56722BB51906A75800BDB765 /* SynMediaInfographic.m in Sources */,
 				565C9FF218DA269300580420 /* SynLanguage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

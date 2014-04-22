@@ -9,9 +9,22 @@
 
 @implementation SynMediaHTML
 
+- (NSDictionary *) dictionary
+{
+    NSMutableDictionary *outputDictionary = [NSMutableDictionary dictionaryWithDictionary:[super dictionary]];
+    
+    // Future SynMediaHTML specific members here
+    
+    return outputDictionary;
+}
+
 + (RKObjectMapping *) mapping
 {
-    return [super mappingClass:[SynMediaHTML class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaHTML class]];
+    
+    // Future SynMediaHTML mapping here
+    
+    return mediaMapping;
 }
 
 @end
