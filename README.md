@@ -66,7 +66,7 @@ To run the Unit Tests, load the Syndication project into XCode and execute `Prod
 ---
 ## Building The Syndication.framework bundle
 
-To build the `Syndication.framework` bundle (which includes i386, armv7, armv7s architectures for Universal apps and the iOS Simulator), load the project into XCode and select one of the iOS Simulator targets underneath the `Framework` aggregate target to build.
+To build the `Syndication.framework` bundle (which includes i386 and armv7 architectures for Universal apps and the iOS Simulator), load the project into XCode and select one of the iOS Simulator targets underneath the `Framework` aggregate target to build.
 
 After you have selected this target, run `Product->Build`.  This will output the `Syndication.framework` in your local DerivedData directory.  To find where this file is, in the Project Navigator, expand the `Products` group, right click on `libSyndication.` and choose **Show in Finder**.  The `Syndication.framework` bundle will be there.
 
