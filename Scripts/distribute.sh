@@ -49,8 +49,7 @@ rm -rf build/tmp
 mkdir -p build/tmp
 cd build/tmp
 cp -a ../Release-iphoneos/Syndication.framework .
-mkdir Documentation
-cp -r ../../Documentation/html/* Documentation
+cp -a ../../Documentation .
 cp -a ../../README.md .
 $ZIP ../../$OUTFILE -r . > ../../build/packaging.log
 cd ../..
