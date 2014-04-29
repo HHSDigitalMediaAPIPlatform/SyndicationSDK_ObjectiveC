@@ -51,6 +51,10 @@ cd build/tmp
 cp -a ../Release-iphoneos/Syndication.framework .
 cp -a ../../Documentation .
 cp -a ../../README.md .
+cp -a ../../CHANGELOG .
+cp -a ../../Example .
+rm -rf Example/SyndicationExampleApp.xcodeproj/project.xcworkspace/xcuserdata
+rm -rf Example/SyndicationExampleApp.xcodeproj/xcuserdata
 $ZIP ../../$OUTFILE -r . > ../../build/packaging.log
 cd ../..
 
