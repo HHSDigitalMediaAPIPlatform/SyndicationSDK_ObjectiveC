@@ -20,13 +20,22 @@
 
     Syndication *syndication = [Syndication syndication];
     
-    [syndication getMediaContentByMediaId:1
+    /*[syndication getMediaContentByMediaId:1
                                   success:^(NSString *results) {
                                       [self.webView loadHTMLString:results baseURL:nil];
                                   }
                                   failure:^(NSError *error) {
                                       
                                   }
+     ];*/
+    [syndication getTagsWithOptions:nil
+                            success:^(SynTagResults *results) {
+                                NSLog(@"%@", [results results]);
+                                
+                            }
+                            failure:^(SynTagResults *results, NSError *error) {
+                                
+                            }
      ];
 }
 

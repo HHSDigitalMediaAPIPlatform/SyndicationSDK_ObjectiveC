@@ -58,6 +58,7 @@
     
     XCTAssertNotNil(media, @"media resultsObjects[0] nil: %s", __PRETTY_FUNCTION__);
     
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %@", media.mediaTags);
     XCTAssertEqualObjects([media mediaId], [NSNumber numberWithInt:1], @"Media mediaId not '1': %s", __PRETTY_FUNCTION__);
     
     NSDictionary *mediaDictionary = [_mediaResults results][0];

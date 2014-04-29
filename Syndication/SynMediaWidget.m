@@ -20,9 +20,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaWidget class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaWidget class]
+                                         representation:representation];
     
     // Future SynMediaWidget mapping here
     

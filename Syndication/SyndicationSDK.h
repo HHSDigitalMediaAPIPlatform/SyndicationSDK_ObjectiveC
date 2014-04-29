@@ -36,3 +36,7 @@
 
 #import "SynSource.h"
 #import "SynSourceResults.h"
+
+#import "SynTag.h"
+#import "SynTagType.h"
+#import "SynTagResults.h"

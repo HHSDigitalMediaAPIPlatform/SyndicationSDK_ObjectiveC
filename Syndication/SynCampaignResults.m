@@ -22,8 +22,8 @@
 #pragma mark - methods
 
 - (void) getCampaignsWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynCampaignResults *campaignResults))success
-                         failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure
+                         success:(void (^)(SynCampaignResults *results))success
+                         failure:(void (^)(SynCampaignResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -45,8 +45,8 @@
 }
 
 - (void) getCampaignById:(NSUInteger)campaignId
-                 success:(void (^)(SynCampaignResults *mediaResults))success
-                 failure:(void (^)(SynCampaignResults *mediaResults, NSError *error))failure
+                 success:(void (^)(SynCampaignResults *results))success
+                 failure:(void (^)(SynCampaignResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/campaigns/%lu.json", (unsigned long)campaignId]
                                          parameters:nil

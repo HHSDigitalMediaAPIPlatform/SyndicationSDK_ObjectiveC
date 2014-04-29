@@ -31,21 +31,21 @@
     // Our dynamic mapping based on mediaType
     [dynamicMapping setObjectMappingForRepresentationBlock:^RKObjectMapping *(id representation) {
         if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Audio"]) {
-            return [SynMediaAudio mapping];
+            return [SynMediaAudio mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Collection"]) {
-            return [SynMediaCollection mapping];
+            return [SynMediaCollection mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Html"]) {
-            return [SynMediaHTML mapping];
+            return [SynMediaHTML mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Image"]) {
-            return [SynMediaImage mapping];
+            return [SynMediaImage mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Infographic"]) {
-            return [SynMediaInfographic mapping];
+            return [SynMediaInfographic mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"SocialMedia"]) {
-            return [SynMediaSocialMedia mapping];
+            return [SynMediaSocialMedia mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Video"]) {
-            return [SynMediaVideo mapping];
+            return [SynMediaVideo mappingWithRepresentation:representation];
         } else if ([[representation valueForKey:@"mediaType"] isEqualIgnoringCase:@"Widget"]) {
-            return [SynMediaWidget mapping];
+            return [SynMediaWidget mappingWithRepresentation:representation];
         }
         return nil;
     }];
@@ -62,8 +62,8 @@
 #pragma mark - methods
 
 - (void) getMediaWithOptions:(NSDictionary *)options
-                     success:(void (^)(SynMediaResults *mediaResults))success
-                     failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                     success:(void (^)(SynMediaResults *results))success
+                     failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   @"mediaTypes",
@@ -132,8 +132,8 @@
 
 - (void) getMediaRelatedToMediaId:(NSUInteger)mediaId
                           options:(NSDictionary *)options
-                            success:(void (^)(SynMediaResults *mediaResults))success
-                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                            success:(void (^)(SynMediaResults *results))success
+                            failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -155,8 +155,8 @@
 }
 
 - (void) getMediaPopularWithOptions:(NSDictionary *)options
-                            success:(void (^)(SynMediaResults *mediaResults))success
-                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                            success:(void (^)(SynMediaResults *results))success
+                            failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -178,8 +178,8 @@
 
 - (void) getMediaByCampaignId:(NSUInteger)campaignId
                       options:(NSDictionary *)options
-                      success:(void (^)(SynMediaResults *mediaResults))success
-                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                      success:(void (^)(SynMediaResults *results))success
+                      failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -200,8 +200,8 @@
 }
 
 - (void) getMediaById:(NSUInteger)mediaId
-              success:(void (^)(SynMediaResults *mediaResults))success
-              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+              success:(void (^)(SynMediaResults *results))success
+              failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu.json", (unsigned long)mediaId]
                                          parameters:nil
@@ -218,8 +218,8 @@
 
 - (void) searchMedia:(NSString *)searchString
              options:(NSDictionary *)options
-             success:(void (^)(SynMediaResults *mediaResults))success
-             failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+             success:(void (^)(SynMediaResults *results))success
+             failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     NSMutableDictionary *parameters = [[self optionsToParameters:options acceptableKeys:@[
                                                                                           SYN_OFFSET,
@@ -240,6 +240,31 @@
                                                 failure(self, error);
                                             }
      ];
+}
+
+- (void) getMediaByTagId:(NSUInteger)tagId
+                 options:(NSDictionary *)options
+                 success:(void (^)(SynMediaResults *results))success
+                 failure:(void (^)(SynMediaResults *results, NSError *error))failure
+{
+    NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
+                                                                                  SYN_OFFSET,
+                                                                                  SYN_MAX,
+                                                                                  SYN_SORT,
+                                                                                  ]];
+    
+    [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/tags/%lu/media.json", (unsigned long)tagId]
+                                         parameters:parameters
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                [self handleResults:mappingResult];
+                                                success(self);
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                [self handleResults:nil];
+                                                failure(self, error);
+                                            }
+     ];
+
 }
 
 @end

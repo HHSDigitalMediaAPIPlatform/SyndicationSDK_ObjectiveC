@@ -18,9 +18,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaHTML class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaHTML class]
+                                         representation:representation];
     
     // Future SynMediaHTML mapping here
     

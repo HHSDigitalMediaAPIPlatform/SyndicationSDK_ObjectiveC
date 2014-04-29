@@ -20,9 +20,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaInfographic class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaInfographic class]
+                                         representation:representation];
     
     // Future SynMediaInfographic mapping here
     

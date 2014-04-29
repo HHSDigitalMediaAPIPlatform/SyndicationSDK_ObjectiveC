@@ -11,10 +11,11 @@
 @class SynMediaAlternateImageResults;
 @class SynCampaignResults;
 @class SynSourceResults;
+@class SynTagResults;
 
 // Base URL to the Syndication API (this can be overridden)
-#define SYNDICATION_DEV_BASE_URL        @"http://ctacdev.com:8090/Syndication"
 #define SYNDICAITON_PRODUCTION_BASE_URL @"https://api.hhs.gov/Syndication"
+#define SYNDICATION_DEV_BASE_URL        @"http://ctacdev.com:8090/Syndication"
 #define SYNDICATION_BASE_URL            SYNDICATION_DEV_BASE_URL
 
 // This SDK can speak to v2 of the Syndication API
@@ -48,10 +49,10 @@
                       options:@{
                                @"max": @"10",
                                }
-                      success:^(SynMediaResults *mediaResults) {
+                      success:^(SynMediaResults *results) {
                           // Success!  Do something with our result set.
                       }
-                      failure:^(SynMediaResults *mediaResults, NSError *error) {
+                      failure:^(SynMediaResults *results, NSError *error) {
                           // Failure.  Handle the NSError we received.
                       }
       ];
@@ -75,8 +76,8 @@
  You can also have the results returned as an array of `NSDictionary` key/value:
  
      NSArray *mediaObjects = [mediaResults results];
-     NSLog(@"First media result name is: %@", [mediaObjects[0] objectForKey:@"name"]);
-     NSLog(@"Second media result description is: %@", [mediaObjects[1] objectForKey:@"description"]);
+     NSLog(@"First media result name is: %@", [mediaObjects[0][@"name"]]);
+     NSLog(@"Second media result description is: %@", [mediaObjects[1][@"description"]]);
  
  If you need to get the total number of results returned in this `SynResults` object, use count:
  
@@ -85,10 +86,10 @@
  If you need to load more data into the result set (more results exist that need to be loaded):
  
      if ([mediaResults hasMore]) {
-         [mediaResults loadMore:^(SynMediaResults *mediaResults) {
+         [mediaResults loadMore:^(SynMediaResults *results) {
                             // Do something with the new media results returned
                         }
-                        failure:^(SynMediaResults *mediaResults, NSError *error) {
+                        failure:^(SynMediaResults *results, NSError *error) {
                             // Handle the error
                         }
          ];
@@ -134,8 +135,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynCampaignResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynCampaignResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getCampaigns:(void (^)(SynCampaignResults *campaignResults))success
-              failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure;
+- (void) getCampaigns:(void (^)(SynCampaignResults *results))success
+              failure:(void (^)(SynCampaignResults *results, NSError *error))failure;
 
 /**
  Request media information from the Syndication API using options
@@ -153,8 +154,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynCampaignResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getCampaignsWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynCampaignResults *campaignResults))success
-                         failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure;
+                         success:(void (^)(SynCampaignResults *results))success
+                         failure:(void (^)(SynCampaignResults *results, NSError *error))failure;
 
 /**
  Request a specific campaign object from the Syndication API by campaign Id
@@ -164,8 +165,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynCampaignResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getCampaignById:(NSUInteger)campaignId
-              success:(void (^)(SynCampaignResults *mediaResults))success
-              failure:(void (^)(SynCampaignResults *mediaResults, NSError *error))failure;
+              success:(void (^)(SynCampaignResults *results))success
+              failure:(void (^)(SynCampaignResults *results, NSError *error))failure;
 
 ///-------------------------------------
 /// @name Media Request Methods
@@ -177,8 +178,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getMedia:(void (^)(SynMediaResults *mediaResults))success
-          failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+- (void) getMedia:(void (^)(SynMediaResults *results))success
+          failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Request media information from the Syndication API using options
@@ -242,8 +243,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getMediaWithOptions:(NSDictionary *)options
-                     success:(void (^)(SynMediaResults *mediaResults))success
-                     failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+                     success:(void (^)(SynMediaResults *results))success
+                     failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Request the media related to a certain media item.
@@ -263,8 +264,8 @@
  */
 - (void) getMediaRelatedToMediaId:(NSUInteger)mediaId
                           options:(NSDictionary *)options
-                          success:(void (^)(SynMediaResults *mediaResults))success
-                          failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+                          success:(void (^)(SynMediaResults *results))success
+                          failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 /**
  Get the media with the highest rankings
  
@@ -280,8 +281,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getMediaPopularWithOptions:(NSDictionary *)options
-                            success:(void (^)(SynMediaResults *mediaResults))success
-                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+                            success:(void (^)(SynMediaResults *results))success
+                            failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Get a list of media items for a specific campaign based on options.
@@ -301,8 +302,8 @@
  */
 - (void) getMediaByCampaignId:(NSUInteger)campaignId
                       options:(NSDictionary *)options
-                      success:(void (^)(SynMediaResults *mediaResults))success
-                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+                      success:(void (^)(SynMediaResults *results))success
+                      failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Request a specific media object from the Syndication API by media ID
@@ -312,8 +313,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getMediaById:(NSUInteger)mediaId
-              success:(void (^)(SynMediaResults *mediaResults))success
-              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+              success:(void (^)(SynMediaResults *results))success
+              failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Search media from the Syndication API by search string
@@ -334,8 +335,29 @@
  */
 - (void) searchMedia:(NSString *)searchString
              options:(NSDictionary *)options
-             success:(void (^)(SynMediaResults *mediaResults))success
-             failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure;
+             success:(void (^)(SynMediaResults *results))success
+             failure:(void (^)(SynMediaResults *results, NSError *error))failure;
+
+/**
+ Request media items associated with a specific Tag Id
+ 
+ The options parameter takes a NSDictionary with the following valid keys.
+ 
+ ***IMPORTANT*** the values *MUST* be Objective C objects (eg: @"1" instead of 1)
+ 
+     max:                            The maximum number of records to return
+     offset:                         The offset of the records set to return for pagination.
+     sort:                           Which field to sort the records by.
+ 
+ @param tagId The tag Id to request media information about
+ @param options `NSDictionary` containing various options (see Discussion below)
+ @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaResults` object that contains the results of the request.
+ @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
+ */
+- (void) getMediaByTagId:(NSUInteger)tagId
+                 options:(NSDictionary *)options
+                 success:(void (^)(SynMediaResults *results))success
+                 failure:(void (^)(SynMediaResults *results, NSError *error))failure;
 
 /**
  Request the alternate images used by a specific media Id
@@ -345,8 +367,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaAlternateImageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
-                                  success:(void (^)(SynMediaAlternateImageResults *mediaResults))success
-                                  failure:(void (^)(SynMediaAlternateImageResults *mediaResults, NSError *error))failure;
+                                  success:(void (^)(SynMediaAlternateImageResults *results))success
+                                  failure:(void (^)(SynMediaAlternateImageResults *results, NSError *error))failure;
 
 /**
  Get the content belonging to a given media item
@@ -405,8 +427,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynLanguageResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getLanguages:(void (^)(SynLanguageResults *languages))success
-              failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+- (void) getLanguages:(void (^)(SynLanguageResults *results))success
+              failure:(void (^)(SynLanguageResults *results, NSError *error))failure;
 
 
 /**
@@ -416,17 +438,17 @@
  
  ***IMPORTANT*** the values *MUST* be Objective C objects (eg: @"1" instead of 1)
  
-     SYN_OFFSET:  The offset of the records set to return for pagination (0 based)
-     SYN_MAX:     The maximum number of records to return
-     SYN_SORT:    The name of the property to which sorting will be applied
+     offset:  The offset of the records set to return for pagination (0 based)
+     max:     The maximum number of records to return
+     sort:    The name of the property to which sorting will be applied
  
  @param options `NSDictionary` containing various options (see Discussion below)
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynLanguageResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getLanguagesWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynLanguageResults *languages))success
-                         failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+                         success:(void (^)(SynLanguageResults *results))success
+                         failure:(void (^)(SynLanguageResults *results, NSError *error))failure;
 
 /**
  Request a specific language from the Syndication API by language ID
@@ -436,8 +458,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynLanguageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getLanguageById:(NSUInteger)languageId
-                 success:(void (^)(SynLanguageResults *languages))success
-                 failure:(void (^)(SynLanguageResults *languages, NSError *error))failure;
+                 success:(void (^)(SynLanguageResults *results))success
+                 failure:(void (^)(SynLanguageResults *results, NSError *error))failure;
 
 ///-------------------------------------
 /// @name MediaType Request Methods
@@ -449,8 +471,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynMediaTypeResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaTypeResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypes))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypes, NSError *error))failure;
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *results))success
+               failure:(void (^)(SynMediaTypeResults *results, NSError *error))failure;
 
 
 ///-------------------------------------
@@ -463,8 +485,8 @@
  @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynSourceResults` object that contains the results of the request.
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynSourceResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
-- (void) getSources:(void (^)(SynSourceResults *sourceResults))success
-            failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure;
+- (void) getSources:(void (^)(SynSourceResults *results))success
+            failure:(void (^)(SynSourceResults *results, NSError *error))failure;
 
 /**
  Request source information from the Syndication API using options
@@ -482,8 +504,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynSourceResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getSourcesWithOptions:(NSDictionary *)options
-                       success:(void (^)(SynSourceResults *sourceResults))success
-                       failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure;
+                       success:(void (^)(SynSourceResults *results))success
+                       failure:(void (^)(SynSourceResults *results, NSError *error))failure;
 
 /**
  Request a specific source object from the Syndication API by source Id
@@ -493,7 +515,55 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynSourceResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getSourceById:(NSUInteger)sourceId
-               success:(void (^)(SynSourceResults *sourceResults))success
-               failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure;
+               success:(void (^)(SynSourceResults *results))success
+               failure:(void (^)(SynSourceResults *results, NSError *error))failure;
+
+///-------------------------------------
+/// @name Tag Request Methods
+///-------------------------------------
+
+/**
+ Request tag type information from the Syndication API
+ 
+ @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynTagResults` object that contains the results of the request.
+ @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynTagResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
+ */
+- (void) getTagTypes:(void (^)(SynTagResults *results))success
+             failure:(void (^)(SynTagResults *results, NSError *error))failure;
+
+/**
+ Request tag information from the Syndication API using options
+ 
+ The options parameter takes a NSDictionary with the following valid keys.
+ 
+ ***IMPORTANT*** the values *MUST* be Objective C objects (eg: @"1" instead of 1)
+ 
+     max:            The maximum number of records to return
+     offset:         The offset of the records set to return for pagination.
+     sort:           Which field to sort the records by.
+     name:           Return tag[s] matching the supplied name
+     nameContains:   Return tags which contain the supplied partial name
+     syndicationId:  Returns tags associated with the supplied syndication Id
+     typeId:         Return tags belonging to the supplied tag id
+     typeName:       Return tags belonging to the supplied tag type name
+ 
+ @param options `NSDictionary` containing various options (see Discussion below)
+ @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynTagResults` object that contains the results of the request.
+ @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynTagResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
+ */
+- (void) getTagsWithOptions:(NSDictionary *)options
+                    success:(void (^)(SynTagResults *results))success
+                    failure:(void (^)(SynTagResults *results, NSError *error))failure;
+
+/**
+ Request a specific tag object from the Syndication API by tag Id
+ 
+ @param tagId The tag Id to request information about
+ @param success A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created `SynTagResults` object that contains the results of the request.
+ @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynTagResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
+ */
+- (void) getTagById:(NSUInteger)tagId
+            success:(void (^)(SynTagResults *results))success
+            failure:(void (^)(SynTagResults *results, NSError *error))failure;
 
 @end

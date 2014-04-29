@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSNumber *resultsStatus;
 
 /// Results Messages
-@property (nonatomic, copy) NSString *resultsMessages;
+@property (nonatomic, strong) NSArray *resultsMessages;
 
 /**
  Get a `NSDictionary` representation of this object

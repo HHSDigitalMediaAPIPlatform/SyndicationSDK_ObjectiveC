@@ -27,9 +27,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaCollection class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaCollection class]
+                                         representation:representation];
     [mediaMapping addAttributeMappingsFromDictionary:@{
                                                        @"youtubeMetaData": @"mediaYoutubeMetaData",
                                                        }];
@@ -37,7 +38,8 @@
     
     [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"mediaItems"
                                                                                  toKeyPath:@"mediaItems"
-                                                                               withMapping:[SynMedia mappingClass:nil]]];
+                                                                               withMapping:[SynMedia mappingClass:nil
+                                                                                                   representation: @{ }]]];
 
     return mediaMapping;
 }

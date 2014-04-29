@@ -20,6 +20,8 @@
 
 #import "SynSourceResults.h"
 
+#import "SynTagResults.h"
+
 @implementation Syndication
 
 NSMutableDictionary *_apiOptions;
@@ -50,9 +52,9 @@ RKObjectManager *_manager;
 
 - (void) setupMapping
 {
-    NSString *fullURL = [_apiOptions objectForKey:APIOPT_SYNDICATION_URL];
+    NSString *fullURL = _apiOptions[APIOPT_SYNDICATION_URL];
     if (!fullURL) {
-        fullURL = [NSString stringWithFormat:@"%@/api/%@", [_apiOptions objectForKey:APIOPT_SYNDICATION_BASE], SYNDICATION_API_VERSION];
+        fullURL = [NSString stringWithFormat:@"%@/api/%@", _apiOptions[APIOPT_SYNDICATION_BASE], SYNDICATION_API_VERSION];
         [_apiOptions setObject:fullURL forKey:APIOPT_SYNDICATION_URL];
     }
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:fullURL]];
@@ -62,83 +64,91 @@ RKObjectManager *_manager;
 
 #pragma mark - Campaign functions
 
-- (void) getCampaigns:(void (^)(SynCampaignResults *campaignResults))success
-              failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure
+- (void) getCampaigns:(void (^)(SynCampaignResults *results))success
+              failure:(void (^)(SynCampaignResults *results, NSError *error))failure
 {
     [self getCampaignsWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getCampaignsWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynCampaignResults *campaignResults))success
-                         failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure
+                         success:(void (^)(SynCampaignResults *results))success
+                         failure:(void (^)(SynCampaignResults *results, NSError *error))failure
 {
     [[SynCampaignResults campaignResults] getCampaignsWithOptions:options success:success failure:failure];
 }
 
 - (void) getCampaignById:(NSUInteger)campaignId
-                 success:(void (^)(SynCampaignResults *mediaResults))success
-                 failure:(void (^)(SynCampaignResults *mediaResults, NSError *error))failure
+                 success:(void (^)(SynCampaignResults *results))success
+                 failure:(void (^)(SynCampaignResults *results, NSError *error))failure
 {
     [[SynCampaignResults campaignResults] getCampaignById:campaignId success:success failure:failure];
 }
 
 #pragma mark - Media functions
 
-- (void) getMedia:(void (^)(SynMediaResults *mediaResults))success
-          failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+- (void) getMedia:(void (^)(SynMediaResults *results))success
+          failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [self getMediaWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getMediaWithOptions:(NSDictionary *)options
-                     success:(void (^)(SynMediaResults *mediaResults))success
-                     failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                     success:(void (^)(SynMediaResults *results))success
+                     failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] getMediaWithOptions:options success:success failure:failure];
 }
 
 - (void) getMediaRelatedToMediaId:(NSUInteger)mediaId
                           options:(NSDictionary *)options
-                          success:(void (^)(SynMediaResults *mediaResults))success
-                          failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                          success:(void (^)(SynMediaResults *results))success
+                          failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] getMediaRelatedToMediaId:mediaId options:options success:success failure:failure];
 }
 
 - (void) getMediaPopularWithOptions:(NSDictionary *)options
-                            success:(void (^)(SynMediaResults *mediaResults))success
-                            failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                            success:(void (^)(SynMediaResults *results))success
+                            failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] getMediaPopularWithOptions:options success:success failure:failure];
 }
 
 - (void) getMediaByCampaignId:(NSUInteger)campaignId
                       options:(NSDictionary *)options
-                      success:(void (^)(SynMediaResults *mediaResults))success
-                      failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+                      success:(void (^)(SynMediaResults *results))success
+                      failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] getMediaByCampaignId:campaignId options:options success:success failure:failure];
 
 }
 
 - (void) getMediaById:(NSUInteger)mediaId
-              success:(void (^)(SynMediaResults *mediaResults))success
-              failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+              success:(void (^)(SynMediaResults *results))success
+              failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] getMediaById:mediaId success:success failure:failure];
 }
 
 - (void) searchMedia:(NSString *)searchString
              options:(NSDictionary *)options
-             success:(void (^)(SynMediaResults *mediaResults))success
-             failure:(void (^)(SynMediaResults *mediaResults, NSError *error))failure
+             success:(void (^)(SynMediaResults *results))success
+             failure:(void (^)(SynMediaResults *results, NSError *error))failure
 {
     [[SynMediaResults mediaResults] searchMedia:searchString options:options success:success failure:failure];
 }
 
+- (void) getMediaByTagId:(NSUInteger)tagId
+                 options:(NSDictionary *)options
+                 success:(void (^)(SynMediaResults *results))success
+                 failure:(void (^)(SynMediaResults *results, NSError *error))failure
+{
+    [[SynMediaResults mediaResults] getMediaByTagId:tagId options:options success:success failure:failure];
+}
+
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
-                                  success:(void (^)(SynMediaAlternateImageResults *mediaResults))success
-                                  failure:(void (^)(SynMediaAlternateImageResults *mediaResults, NSError *error))failure
+                                  success:(void (^)(SynMediaAlternateImageResults *results))success
+                                  failure:(void (^)(SynMediaAlternateImageResults *results, NSError *error))failure
 {
     [[SynMediaAlternateImageResults alternateImageResults] getMediaAlternateImagesByMediaId:mediaId success:success failure:failure];
 }
@@ -176,54 +186,76 @@ RKObjectManager *_manager;
 
 #pragma mark - Languages functions
 
-- (void) getLanguages:(void (^)(SynLanguageResults *languageResults))success
-              failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
+- (void) getLanguages:(void (^)(SynLanguageResults *results))success
+              failure:(void (^)(SynLanguageResults *results, NSError *error))failure
 {
     [self getLanguagesWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getLanguagesWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynLanguageResults *languageResults))success
-                         failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
+                         success:(void (^)(SynLanguageResults *results))success
+                         failure:(void (^)(SynLanguageResults *results, NSError *error))failure
 {
     [[SynLanguageResults languageResults] getLanguagesWithOptions:options success:success failure:failure];
 }
 
 - (void) getLanguageById:(NSUInteger)languageId
-                 success:(void (^)(SynLanguageResults *languageResults))success
-                 failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
+                 success:(void (^)(SynLanguageResults *results))success
+                 failure:(void (^)(SynLanguageResults *results, NSError *error))failure
 {
     [[SynLanguageResults languageResults] getLanguageById:languageId success:success failure: failure];
 }
 
 #pragma mark - MediaTypes functions
 
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypesResults))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypesREsults, NSError *error))failure
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *results))success
+               failure:(void (^)(SynMediaTypeResults *results, NSError *error))failure
 {
     [[SynMediaTypeResults mediaTypeResults] getMediaTypes:success failure:failure];
 }
 
 #pragma mark - Sources functions
 
-- (void) getSources:(void (^)(SynSourceResults *sourceResults))success
-            failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+- (void) getSources:(void (^)(SynSourceResults *results))success
+            failure:(void (^)(SynSourceResults *results, NSError *error))failure
 {
     [self getSourcesWithOptions:@{ } success:success failure:failure];
 }
 
 - (void) getSourcesWithOptions:(NSDictionary *)options
-                       success:(void (^)(SynSourceResults *sourceResults))success
-                       failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+                       success:(void (^)(SynSourceResults *results))success
+                       failure:(void (^)(SynSourceResults *results, NSError *error))failure
 {
     [[SynSourceResults sourceResults] getSourcesWithOptions:options success:success failure:failure];
 }
 
 - (void) getSourceById:(NSUInteger)sourceId
-               success:(void (^)(SynSourceResults *sourceResults))success
-               failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+               success:(void (^)(SynSourceResults *results))success
+               failure:(void (^)(SynSourceResults *results, NSError *error))failure
 {
     [[SynSourceResults sourceResults] getSourceById:sourceId success:success failure:failure];
+}
+
+#pragma mark - Tags functions
+
+- (void) getTagTypes:(void (^)(SynTagResults *results))success
+             failure:(void (^)(SynTagResults *results, NSError *error))failure
+{
+    [[SynTagResults tagTypeResults] getTagTypes:success failure:failure];
+}
+
+- (void) getTagsWithOptions:(NSDictionary *)options
+                    success:(void (^)(SynTagResults *results))success
+                    failure:(void (^)(SynTagResults *results, NSError *error))failure
+{
+    [[SynTagResults tagNestedResults] getTagsWithOptions:options success:success failure:failure];
+}
+
+- (void) getTagById:(NSUInteger)tagId
+            success:(void (^)(SynTagResults *results))success
+            failure:(void (^)(SynTagResults *results, NSError *error))failure
+{
+    [[SynTagResults tagResults] getTagById:tagId success:success failure:failure];
 }
 
 @end

@@ -18,6 +18,6 @@
  @return `NSDictionary` representation of this object
  */
 - (NSDictionary *) dictionary;
-+ (RKObjectMapping *) mapping;
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation;
 
 @end

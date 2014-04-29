@@ -7,6 +7,9 @@
 
 #import "SynMedia.h"
 
+/**
+ Media Collection Information
+ */
 @interface SynMediaCollection : SynMedia
 
 /// Media Items
@@ -18,6 +21,6 @@
  @return `NSDictionary` representation of this object
  */
 - (NSDictionary *) dictionary;
-+ (RKObjectMapping *) mapping;
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation;
 
 @end

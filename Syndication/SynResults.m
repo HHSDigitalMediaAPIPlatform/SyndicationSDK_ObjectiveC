@@ -19,10 +19,10 @@
 {
     SynResults *results = [self new];
 
-    if ([mappingOptions objectForKey:@"results"]) {
-        [RKObjectManager.sharedManager addResponseDescriptor:[mappingOptions objectForKey:@"results"]];
-    } else if ([mappingOptions objectForKey:@"mapping"]) {
-        [RKObjectManager.sharedManager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:[mappingOptions objectForKey:@"mapping"]
+    if (mappingOptions[@"results"]) {
+        [RKObjectManager.sharedManager addResponseDescriptor:mappingOptions[@"results"]];
+    } else if (mappingOptions[@"mapping"]) {
+        [RKObjectManager.sharedManager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:mappingOptions[@"mapping"]
                                                                                                           method:RKRequestMethodGET
                                                                                                      pathPattern:nil
                                                                                                          keyPath:@"results"
@@ -59,13 +59,25 @@
     // dictionaries as well as an array of objects.  Also handle pagination
     // (making sure our result set is appended to when loading more)
     
-    NSArray *resultsArray = [[results dictionary] objectForKey:@"results"];
+    NSArray *resultsArray = [results dictionary][@"results"];
     
     NSMutableArray *outDictionaryArray = [NSMutableArray array];
     NSMutableArray *outObjectsArray = [NSMutableArray array];
     for (int i = 0; i < [resultsArray count]; i++) {
-        [outObjectsArray addObject:resultsArray[i]];
-        [outDictionaryArray addObject:[resultsArray[i] dictionary]];
+        // If we get a NSMutableDictionary here, that means we are processing Tag results.
+        // We want to iterate through the dictionary's keys and build our objects from that
+        if ([resultsArray[i] isKindOfClass:[NSMutableDictionary class]]) {
+            for (NSString *key in resultsArray[i]) {
+                for (int j = 0; j < [(NSArray*)resultsArray[i][key] count]; j++) {
+                    [outObjectsArray addObject:resultsArray[i][key][j]];
+                    [outDictionaryArray addObject:[resultsArray[i][key][j] dictionary]];
+                }
+            }
+        } else {
+            // This is a standard NSArray response from RestKit
+            [outObjectsArray addObject:resultsArray[i]];
+            [outDictionaryArray addObject:[resultsArray[i] dictionary]];
+        }
     }
     
     if (!append) {
@@ -77,11 +89,11 @@
     [_resultsObjectsArray addObjectsFromArray:outObjectsArray];
     
     // And our pagination data
-    _paginationDictionary = [[[results dictionary] objectForKey:@"meta.pagination"] dictionary];
-    _paginationObject = [[results dictionary] objectForKey:@"meta.pagination"];
+    _paginationDictionary = [[results dictionary][@"meta.pagination"] dictionary];
+    _paginationObject = [results dictionary][@"meta.pagination"];
     
     // And our Meta Data
-    _metaDataDictionary = [[[results dictionary] objectForKey:@"meta"] dictionary];
+    _metaDataDictionary = [[results dictionary][@"meta"] dictionary];
 }
 
 - (void) handleResults:(RKMappingResult *)results
@@ -125,12 +137,12 @@
 
 - (NSNumber *) resultsStatus
 {
-    return [_metaDataDictionary objectForKey:@"status"];
+    return _metaDataDictionary[@"status"];
 }
 
 - (NSString *) resultsMessages
 {
-    return [_metaDataDictionary objectForKey:@"messages"];
+    return _metaDataDictionary[@"messages"];
 }
 
 - (NSDictionary *) optionsToParameters:(NSDictionary *)options acceptableKeys:(NSArray *)acceptableKeys
@@ -140,7 +152,7 @@
     if (options) {
         for (NSString *key in acceptableKeys) {
             if ([options objectForKey:key]) {
-                [parameters setObject:[options objectForKey:key] forKey:key];
+                [parameters setObject:options[key] forKey:key];
             }
         }
     }
@@ -180,7 +192,7 @@
         return NO;
     }
 
-    return ([_paginationObject.pageNum intValue] < [_paginationObject.totalPages intValue]);
+    return ([_paginationObject.pageNum intValue] < [_paginationObject.totalPages intValue] && _paginationObject.nextUrl);
 }
 
 @end

@@ -23,8 +23,8 @@
 #pragma mark - methods
 
 - (void) getLanguagesWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynLanguageResults *languageResults))success
-                         failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
+                         success:(void (^)(SynLanguageResults *results))success
+                         failure:(void (^)(SynLanguageResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -46,8 +46,8 @@
 }
 
 - (void) getLanguageById:(NSUInteger)languageId
-                 success:(void (^)(SynLanguageResults *languageResults))success
-                 failure:(void (^)(SynLanguageResults *languageResults, NSError *error))failure
+                 success:(void (^)(SynLanguageResults *results))success
+                 failure:(void (^)(SynLanguageResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/languages/%lu.json", (unsigned long)languageId]
                                          parameters:nil

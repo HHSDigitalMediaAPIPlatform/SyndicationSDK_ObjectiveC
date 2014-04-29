@@ -21,9 +21,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaImage class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaImage class]
+                                         representation:representation];
     [mediaMapping addAttributeMappingsFromDictionary:@{
                                                        @"width": @"mediaWidth",
                                                        @"height": @"mediaHeight",

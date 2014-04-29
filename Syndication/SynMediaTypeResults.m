@@ -21,8 +21,8 @@
 
 #pragma mark - methods
 
-- (void) getMediaTypes:(void (^)(SynMediaTypeResults *mediaTypesResults))success
-               failure:(void (^)(SynMediaTypeResults *mediaTypesResults, NSError *error))failure
+- (void) getMediaTypes:(void (^)(SynMediaTypeResults *results))success
+               failure:(void (^)(SynMediaTypeResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:@"resources/mediaTypes.json"
                                          parameters:nil

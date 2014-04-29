@@ -70,6 +70,8 @@
 	
 	<option value="//api/name/getMediaById:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getMediaById:success:failure:</option>
 	
+	<option value="//api/name/getMediaByTagId:options:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getMediaByTagId:options:success:failure:</option>
+	
 	<option value="//api/name/getMediaContentByMediaId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getMediaContentByMediaId:success:failure:</option>
 	
 	<option value="//api/name/getMediaEmbedByMediaId:options:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getMediaEmbedByMediaId:options:success:failure:</option>
@@ -89,6 +91,12 @@
 	<option value="//api/name/getSources:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getSources:failure:</option>
 	
 	<option value="//api/name/getSourcesWithOptions:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getSourcesWithOptions:success:failure:</option>
+	
+	<option value="//api/name/getTagById:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getTagById:success:failure:</option>
+	
+	<option value="//api/name/getTagTypes:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getTagTypes:failure:</option>
+	
+	<option value="//api/name/getTagsWithOptions:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getTagsWithOptions:success:failure:</option>
 	
 	<option value="//api/name/searchMedia:options:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- searchMedia:options:success:failure:</option>
 	
@@ -117,6 +125,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MediaType Request Methods">MediaType Request Methods</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Source Request Methods">Source Request Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tag Request Methods">Tag Request Methods</a></span></li>
 	
 </ul></li>
 
@@ -158,6 +168,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMediaById:success:failure:">getMediaById:success:failure:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMediaByTagId:options:success:failure:">getMediaByTagId:options:success:failure:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMediaContentByMediaId:success:failure:">getMediaContentByMediaId:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMediaEmbedByMediaId:options:success:failure:">getMediaEmbedByMediaId:options:success:failure:</a></span></li>
@@ -177,6 +189,12 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSources:failure:">getSources:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSourcesWithOptions:success:failure:">getSourcesWithOptions:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTagById:success:failure:">getTagById:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTagTypes:failure:">getTagTypes:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTagsWithOptions:success:failure:">getTagsWithOptions:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchMedia:options:success:failure:">searchMedia:options:success:failure:</a></span></li>
 	
@@ -236,10 +254,10 @@
                   options:@{
                            @"max": @"10",
                            }
-                  success:^(SynMediaResults *mediaResults) {
+                  success:^(SynMediaResults *results) {
                       // Success!  Do something with our result set.
                   }
-                  failure:^(SynMediaResults *mediaResults, NSError *error) {
+                  failure:^(SynMediaResults *results, NSError *error) {
                       // Failure.  Handle the NSError we received.
                   }
   ];
@@ -265,8 +283,8 @@
 <p>You can also have the results returned as an array of <code>NSDictionary</code> key/value:</p>
 
 <pre><code> NSArray *mediaObjects = [mediaResults results];
- NSLog(@"First media result name is: %@", [mediaObjects[0] objectForKey:@"name"]);
- NSLog(@"Second media result description is: %@", [mediaObjects[1] objectForKey:@"description"]);
+ NSLog(@"First media result name is: %@", [mediaObjects[0][@"name"]]);
+ NSLog(@"Second media result description is: %@", [mediaObjects[1][@"description"]]);
 </code></pre>
 
 <p>If you need to get the total number of results returned in this <a href="../Classes/SynResults.html"><code>SynResults</code></a> object, use count:</p>
@@ -277,10 +295,10 @@
 <p>If you need to load more data into the result set (more results exist that need to be loaded):</p>
 
 <pre><code> if ([mediaResults hasMore]) {
-     [mediaResults loadMore:^(SynMediaResults *mediaResults) {
+     [mediaResults loadMore:^(SynMediaResults *results) {
                         // Do something with the new media results returned
                     }
-                    failure:^(SynMediaResults *mediaResults, NSError *error) {
+                    failure:^(SynMediaResults *results, NSError *error) {
                         // Handle the error
                     }
      ];
@@ -396,6 +414,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/getMediaByTagId:options:success:failure:">&ndash;&nbsp;getMediaByTagId:options:success:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/getMediaAlternateImagesByMediaId:success:failure:">&ndash;&nbsp;getMediaAlternateImagesByMediaId:success:failure:</a></code>
 	</span>
 	
@@ -481,6 +505,32 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getSourceById:success:failure:">&ndash;&nbsp;getSourceById:success:failure:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Tag Request Methods" name="task_Tag Request Methods"></a>
+						<h3 class="subsubtitle task-title">Tag Request Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTagTypes:failure:">&ndash;&nbsp;getTagTypes:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTagsWithOptions:success:failure:">&ndash;&nbsp;getTagsWithOptions:success:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTagById:success:failure:">&ndash;&nbsp;getTagById:success:failure:</a></code>
 	</span>
 	
 	
@@ -625,7 +675,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getCampaignById:(NSUInteger)<em>campaignId</em> success:(void ( ^ ) ( SynCampaignResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getCampaignById:(NSUInteger)<em>campaignId</em> success:(void ( ^ ) ( SynCampaignResults *results ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -681,7 +731,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getCampaigns:(void ( ^ ) ( SynCampaignResults *campaignResults ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *campaignResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getCampaigns:(void ( ^ ) ( SynCampaignResults *results ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -732,7 +782,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getCampaignsWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynCampaignResults *campaignResults ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *campaignResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getCampaignsWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynCampaignResults *results ))<em>success</em> failure:(void ( ^ ) ( SynCampaignResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -800,7 +850,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getLanguageById:(NSUInteger)<em>languageId</em> success:(void ( ^ ) ( SynLanguageResults *languageResults ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *languageResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getLanguageById:(NSUInteger)<em>languageId</em> success:(void ( ^ ) ( SynLanguageResults *results ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -856,7 +906,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getLanguages:(void ( ^ ) ( SynLanguageResults *languageResults ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *languageResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getLanguages:(void ( ^ ) ( SynLanguageResults *results ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -907,7 +957,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getLanguagesWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynLanguageResults *languageResults ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *languageResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getLanguagesWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynLanguageResults *results ))<em>success</em> failure:(void ( ^ ) ( SynLanguageResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -943,9 +993,9 @@
 
 <p><strong><em>IMPORTANT</em></strong> the values <em>MUST</em> be Objective C objects (eg: @&ldquo;1&rdquo; instead of 1)</p>
 
-<pre><code> SYN_OFFSET:  The offset of the records set to return for pagination (0 based)
- SYN_MAX:     The maximum number of records to return
- SYN_SORT:    The name of the property to which sorting will be applied
+<pre><code> offset:  The offset of the records set to return for pagination (0 based)
+ max:     The maximum number of records to return
+ sort:    The name of the property to which sorting will be applied
 </code></pre>
 	</div>
 	
@@ -975,7 +1025,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMedia:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMedia:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1026,7 +1076,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaAlternateImagesByMediaId:(NSUInteger)<em>mediaId</em> success:(void ( ^ ) ( SynMediaAlternateImageResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaAlternateImageResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaAlternateImagesByMediaId:(NSUInteger)<em>mediaId</em> success:(void ( ^ ) ( SynMediaAlternateImageResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaAlternateImageResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1082,7 +1132,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaByCampaignId:(NSUInteger)<em>campaignId</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaByCampaignId:(NSUInteger)<em>campaignId</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1155,7 +1205,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaById:(NSUInteger)<em>mediaId</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaById:(NSUInteger)<em>mediaId</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1184,6 +1234,79 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Syndication.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getMediaByTagId:options:success:failure:" title="getMediaByTagId:options:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getMediaByTagId:options:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request media items associated with a specific Tag Id</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getMediaByTagId:(NSUInteger)<em>tagId</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagId</em></dt>
+			<dd><p>The tag Id to request media information about</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p><code>NSDictionary</code> containing various options (see Discussion below)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <a href="../Classes/SynMediaResults.html"><code>SynMediaResults</code></a> object that contains the results of the request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <a href="../Classes/SynMediaResults.html"><code>SynMediaResults</code></a> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The options parameter takes a NSDictionary with the following valid keys.</p>
+
+<p><strong><em>IMPORTANT</em></strong> the values <em>MUST</em> be Objective C objects (eg: @&ldquo;1&rdquo; instead of 1)</p>
+
+<pre><code> max:                            The maximum number of records to return
+ offset:                         The offset of the records set to return for pagination.
+ sort:                           Which field to sort the records by.
+</code></pre>
+	</div>
 	
 	
 	
@@ -1344,7 +1467,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaPopularWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaPopularWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1467,7 +1590,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaRelatedToMediaId:(NSUInteger)<em>mediaId</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaRelatedToMediaId:(NSUInteger)<em>mediaId</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1540,7 +1663,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaTypes:(void ( ^ ) ( SynMediaTypeResults *mediaTypesResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaTypeResults *mediaTypesResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaTypes:(void ( ^ ) ( SynMediaTypeResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaTypeResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1549,12 +1672,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
-			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <a href="../Classes/SynMediaTypeResults.html"><code>SynMediaTypeResults</code></a> object that contains the results of the request.</p></dd>
+			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <code>SynMediaTypeResults</code> object that contains the results of the request.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <a href="../Classes/SynMediaTypeResults.html"><code>SynMediaTypeResults</code></a> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <code>SynMediaTypeResults</code> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -1591,7 +1714,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getMediaWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getMediaWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1705,7 +1828,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getSourceById:(NSUInteger)<em>sourceId</em> success:(void ( ^ ) ( SynSourceResults *sourceResults ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *sourceResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getSourceById:(NSUInteger)<em>sourceId</em> success:(void ( ^ ) ( SynSourceResults *results ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1761,7 +1884,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getSources:(void ( ^ ) ( SynSourceResults *sourceResults ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *sourceResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getSources:(void ( ^ ) ( SynSourceResults *results ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1812,7 +1935,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)getSourcesWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynSourceResults *sourceResults ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *sourceResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getSourcesWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynSourceResults *results ))<em>success</em> failure:(void ( ^ ) ( SynSourceResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1869,6 +1992,186 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getTagById:success:failure:" title="getTagById:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getTagById:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request a specific tag object from the Syndication API by tag Id</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getTagById:(NSUInteger)<em>tagId</em> success:(void ( ^ ) ( SynTagResults *results ))<em>success</em> failure:(void ( ^ ) ( SynTagResults *results , NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagId</em></dt>
+			<dd><p>The tag Id to request information about</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that contains the results of the request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Syndication.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getTagTypes:failure:" title="getTagTypes:failure:"></a>
+	<h3 class="subsubtitle method-title">getTagTypes:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request tag type information from the Syndication API</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getTagTypes:(void ( ^ ) ( SynTagResults *results ))<em>success</em> failure:(void ( ^ ) ( SynTagResults *results , NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that contains the results of the request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Syndication.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getTagsWithOptions:success:failure:" title="getTagsWithOptions:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getTagsWithOptions:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request tag information from the Syndication API using options</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getTagsWithOptions:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynTagResults *results ))<em>success</em> failure:(void ( ^ ) ( SynTagResults *results , NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p><code>NSDictionary</code> containing various options (see Discussion below)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the object request operation finishes successfully.  This block has no return value and takes one argument: the created <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that contains the results of the request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the <a href="../Classes/SynTagResults.html"><code>SynTagResults</code></a> object that was created and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The options parameter takes a NSDictionary with the following valid keys.</p>
+
+<p><strong><em>IMPORTANT</em></strong> the values <em>MUST</em> be Objective C objects (eg: @&ldquo;1&rdquo; instead of 1)</p>
+
+<pre><code> max:            The maximum number of records to return
+ offset:         The offset of the records set to return for pagination.
+ sort:           Which field to sort the records by.
+ name:           Return tag[s] matching the supplied name
+ nameContains:   Return tags which contain the supplied partial name
+ syndicationId:  Returns tags associated with the supplied syndication Id
+ typeId:         Return tags belonging to the supplied tag id
+ typeName:       Return tags belonging to the supplied tag type name
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Syndication.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/searchMedia:options:success:failure:" title="searchMedia:options:success:failure:"></a>
 	<h3 class="subsubtitle method-title">searchMedia:options:success:failure:</h3>
 	
@@ -1880,7 +2183,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)searchMedia:(NSString *)<em>searchString</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *mediaResults ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *mediaResults , NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)searchMedia:(NSString *)<em>searchString</em> options:(NSDictionary *)<em>options</em> success:(void ( ^ ) ( SynMediaResults *results ))<em>success</em> failure:(void ( ^ ) ( SynMediaResults *results , NSError *error ))<em>failure</em></code></div>
 
     
 	
@@ -1956,7 +2259,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 CTAC. All rights reserved. (Last updated: 2014-04-23)</span><br />
+						<p><span class="copyright">&copy; 2014 CTAC. All rights reserved. (Last updated: 2014-04-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

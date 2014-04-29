@@ -22,8 +22,8 @@
 #pragma mark - methods
 
 - (void) getSourcesWithOptions:(NSDictionary *)options
-                       success:(void (^)(SynSourceResults *sourceResults))success
-                       failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+                       success:(void (^)(SynSourceResults *results))success
+                       failure:(void (^)(SynSourceResults *results, NSError *error))failure
 {
     NSDictionary *parameters = [self optionsToParameters:options acceptableKeys:@[
                                                                                   SYN_OFFSET,
@@ -45,8 +45,8 @@
 }
 
 - (void) getSourceById:(NSUInteger)sourceId
-               success:(void (^)(SynSourceResults *sourceResults))success
-               failure:(void (^)(SynSourceResults *sourceResults, NSError *error))failure
+               success:(void (^)(SynSourceResults *results))success
+               failure:(void (^)(SynSourceResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/sources/%lu.json", (unsigned long)sourceId]
                                          parameters:nil

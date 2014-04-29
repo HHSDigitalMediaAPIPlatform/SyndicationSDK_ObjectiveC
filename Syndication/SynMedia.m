@@ -8,9 +8,9 @@
 #import "SynMedia.h"
 #import "SynMediaAlternateImage.h"
 #import "SynCampaign.h"
-#import "SynMediaTags.h"
 #import "SynResults.h"
 #import "RestKit.h"
+#import "SynTag.h"
 
 @implementation SynMedia
 
@@ -51,7 +51,7 @@
     }
 
     // "tags"
-    SYNOUTPUT_DICTIONARY(@"tags", [self.mediaTags dictionary]);
+//    SYNOUTPUT_DICTIONARY(@"tags", [self.mediaTags dictionary]);
     
     // "alternateImages"
     tmp = [NSMutableArray array];
@@ -66,6 +66,7 @@
 }
 
 + (RKObjectMapping *) mappingClass:(Class)mappingClass
+                    representation:(NSDictionary *)representation
 {
     if (!mappingClass) {
         mappingClass = [SynMedia class];
@@ -105,9 +106,27 @@
                                                                                  toKeyPath:@"mediaCampaigns"
                                                                                withMapping:[SynCampaign mapping]]];
 
-    [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"tags"
-                                                                                 toKeyPath:@"mediaTags"
-                                                                               withMapping:[SynMediaTags mapping]]];
+    if (representation
+        && representation[@"tags"]
+        && [representation[@"tags"] isKindOfClass:[NSDictionary class]]
+        && representation[@"tags"][@"tags"]) {
+        /*
+         * Special handling for tags because we don't know (at build time) the exact mapping
+         * that will be below the tags object since the direct descendant of tags is a hash of tag type
+         * names.  We shove them in a NSMutableDictionary and let the handleResults function handle
+         * this special case.
+         */
+        RKObjectMapping *tagsMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+        for (NSString *key in representation[@"tags"][@"tags"]) {
+            [tagsMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:key
+                                                                                        toKeyPath:key
+                                                                                      withMapping:[SynTag mapping]]];
+        }
+
+        [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"tags.tags"
+                                                                                     toKeyPath:@"mediaTags"
+                                                                                   withMapping:tagsMapping]];
+    }
     
     [mediaMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"alternateImages"
                                                                                  toKeyPath:@"mediaAlternateImages"

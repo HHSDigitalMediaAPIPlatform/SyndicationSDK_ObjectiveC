@@ -20,9 +20,10 @@
     return outputDictionary;
 }
 
-+ (RKObjectMapping *) mapping
++ (RKObjectMapping *) mappingWithRepresentation:(NSDictionary *)representation
 {
-    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaAudio class]];
+    RKObjectMapping *mediaMapping = [super mappingClass:[SynMediaAudio class]
+                                         representation:representation];
     
     // Future SynMediaAudio mapping here
     

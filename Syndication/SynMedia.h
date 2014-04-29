@@ -5,7 +5,6 @@
 //  Copyright (c) 2014 CTAC. All rights reserved.
 //
 
-#import "SynMediaTags.h"
 #import "SynSource.h"
 #import "SynLanguage.h"
 
@@ -83,7 +82,7 @@
 @property (nonatomic, strong) SynSource *mediaSource;
 
 /// Media Tags
-@property (nonatomic, strong) SynMediaTags *mediaTags;
+@property (nonatomic, strong) NSMutableDictionary *mediaTags;
 
 /// Media Alternate Images
 @property (nonatomic, strong) NSArray *mediaAlternateImages;
@@ -94,6 +93,7 @@
  @return `NSDictionary` representation of this object
  */
 - (NSDictionary *) dictionary;
-+ (RKObjectMapping *) mappingClass:(Class)mappingClass;
++ (RKObjectMapping *) mappingClass:(Class)mappingClass
+                    representation:(NSDictionary *)representation;
 
 @end

@@ -42,7 +42,6 @@
 		5616825D18D2682400120CE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616825C18D2682400120CE4 /* UIKit.framework */; };
 		5616826018D2682400120CE4 /* libSyndication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5616824818D2682400120CE4 /* libSyndication.a */; };
 		5616826618D2682400120CE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5616826418D2682400120CE4 /* InfoPlist.strings */; };
-		5616826818D2682400120CE4 /* SyndicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616826718D2682400120CE4 /* SyndicationTests.m */; };
 		5616827918D268A100120CE4 /* Syndication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616827718D268A100120CE4 /* Syndication.m */; };
 		5616827B18D268ED00120CE4 /* Syndication.h in Headers */ = {isa = PBXBuildFile; fileRef = 5616827618D268A100120CE4 /* Syndication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5628C57918E4AAFE007714E7 /* SynMediaTypeResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 5628C57718E4AAFE007714E7 /* SynMediaTypeResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,6 +83,20 @@
 		56722BC21906ABF300BDB765 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FCF18DA109F00580420 /* CFNetwork.framework */; };
 		56722BC31906ABF900BDB765 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C9FD218DA10CD00580420 /* MobileCoreServices.framework */; };
 		56722BC51906AD5F00BDB765 /* SyndicationTestMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */; };
+		56722BC81906B00600BDB765 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BC71906B00600BDB765 /* XCTestCase+AsyncTesting.m */; };
+		56722BCB1906BC3700BDB765 /* SyndicationTestMediaTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BCA1906BC3700BDB765 /* SyndicationTestMediaTypes.m */; };
+		56722BCD1906BDEC00BDB765 /* SyndicationTestCampaigns.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BCC1906BDEC00BDB765 /* SyndicationTestCampaigns.m */; };
+		56722BCF1906BEC600BDB765 /* SyndicationTestLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BCE1906BEC600BDB765 /* SyndicationTestLanguages.m */; };
+		56722BD11906BFDB00BDB765 /* SyndicationTestSources.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BD01906BFDB00BDB765 /* SyndicationTestSources.m */; };
+		56722BF8190EAA9500BDB765 /* SynTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BF6190EAA9500BDB765 /* SynTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BF9190EAA9500BDB765 /* SynTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BF7190EAA9500BDB765 /* SynTag.m */; };
+		56722BFC190EAB3C00BDB765 /* SynTagResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BFA190EAB3C00BDB765 /* SynTagResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722BFD190EAB3C00BDB765 /* SynTagResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BFB190EAB3C00BDB765 /* SynTagResults.m */; };
+		56722C00190EAD6700BDB765 /* SynTagType.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722BFE190EAD6700BDB765 /* SynTagType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722C01190EAD6700BDB765 /* SynTagType.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722BFF190EAD6700BDB765 /* SynTagType.m */; };
+		56722C04190EBC1B00BDB765 /* SynMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 56722C02190EBC1B00BDB765 /* SynMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56722C05190EBC1B00BDB765 /* SynMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722C03190EBC1B00BDB765 /* SynMessage.m */; };
+		56722C07190EC32B00BDB765 /* SyndicationTestTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 56722C06190EC32B00BDB765 /* SyndicationTestTags.m */; };
 		56A95CC518E5AFA00011B636 /* SynMediaResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CC318E5AFA00011B636 /* SynMediaResults.m */; };
 		56A95CCC18E5B5DF0011B636 /* NSString+Equality.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95CCD18E5B5DF0011B636 /* NSString+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95CCB18E5B5DF0011B636 /* NSString+Equality.m */; };
@@ -93,8 +106,6 @@
 		56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95CC218E5AFA00011B636 /* SynMediaResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3018E6017B0011B636 /* SynMediaVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3318E6017B0011B636 /* SynMediaVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3118E6017B0011B636 /* SynMediaVideo.m */; };
-		56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3818E621D80011B636 /* SynMediaTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56A95D3B18E621D80011B636 /* SynMediaTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3918E621D80011B636 /* SynMediaTags.m */; };
 		56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D3C18E8A5780011B636 /* SynMediaAlternateImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A95D3F18E8A5780011B636 /* SynMediaAlternateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A95D3D18E8A5780011B636 /* SynMediaAlternateImage.m */; };
 		56A95D6818ECD4F80011B636 /* SynMediaAlternateImageResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A95D6618ECD4F80011B636 /* SynMediaAlternateImageResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -194,7 +205,6 @@
 		5616825C18D2682400120CE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5616826318D2682400120CE4 /* SyndicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SyndicationTests-Info.plist"; sourceTree = "<group>"; };
 		5616826518D2682400120CE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5616826718D2682400120CE4 /* SyndicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SyndicationTests.m; sourceTree = "<group>"; };
 		5616827618D268A100120CE4 /* Syndication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Syndication.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5616827718D268A100120CE4 /* Syndication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Syndication.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5628C57718E4AAFE007714E7 /* SynMediaTypeResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SynMediaTypeResults.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -231,6 +241,21 @@
 		56722BBA1906A82400BDB765 /* SynMediaWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaWidget.h; sourceTree = "<group>"; };
 		56722BBB1906A82400BDB765 /* SynMediaWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaWidget.m; sourceTree = "<group>"; };
 		56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestMedia.m; sourceTree = "<group>"; };
+		56722BC61906B00600BDB765 /* XCTestCase+AsyncTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+AsyncTesting.h"; sourceTree = "<group>"; };
+		56722BC71906B00600BDB765 /* XCTestCase+AsyncTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+AsyncTesting.m"; sourceTree = "<group>"; };
+		56722BCA1906BC3700BDB765 /* SyndicationTestMediaTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestMediaTypes.m; sourceTree = "<group>"; };
+		56722BCC1906BDEC00BDB765 /* SyndicationTestCampaigns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestCampaigns.m; sourceTree = "<group>"; };
+		56722BCE1906BEC600BDB765 /* SyndicationTestLanguages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestLanguages.m; sourceTree = "<group>"; };
+		56722BD01906BFDB00BDB765 /* SyndicationTestSources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestSources.m; sourceTree = "<group>"; };
+		56722BF6190EAA9500BDB765 /* SynTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynTag.h; sourceTree = "<group>"; };
+		56722BF7190EAA9500BDB765 /* SynTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynTag.m; sourceTree = "<group>"; };
+		56722BFA190EAB3C00BDB765 /* SynTagResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynTagResults.h; sourceTree = "<group>"; };
+		56722BFB190EAB3C00BDB765 /* SynTagResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynTagResults.m; sourceTree = "<group>"; };
+		56722BFE190EAD6700BDB765 /* SynTagType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynTagType.h; sourceTree = "<group>"; };
+		56722BFF190EAD6700BDB765 /* SynTagType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynTagType.m; sourceTree = "<group>"; };
+		56722C02190EBC1B00BDB765 /* SynMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMessage.h; sourceTree = "<group>"; };
+		56722C03190EBC1B00BDB765 /* SynMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMessage.m; sourceTree = "<group>"; };
+		56722C06190EC32B00BDB765 /* SyndicationTestTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyndicationTestTags.m; sourceTree = "<group>"; };
 		56A95CC218E5AFA00011B636 /* SynMediaResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaResults.h; sourceTree = "<group>"; };
 		56A95CC318E5AFA00011B636 /* SynMediaResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaResults.m; sourceTree = "<group>"; };
 		56A95CCA18E5B5DF0011B636 /* NSString+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Equality.h"; sourceTree = "<group>"; };
@@ -239,8 +264,6 @@
 		56A95CD218E5C0950011B636 /* SynMediaImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaImage.m; sourceTree = "<group>"; };
 		56A95D3018E6017B0011B636 /* SynMediaVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaVideo.h; sourceTree = "<group>"; };
 		56A95D3118E6017B0011B636 /* SynMediaVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaVideo.m; sourceTree = "<group>"; };
-		56A95D3818E621D80011B636 /* SynMediaTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaTags.h; sourceTree = "<group>"; };
-		56A95D3918E621D80011B636 /* SynMediaTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaTags.m; sourceTree = "<group>"; };
 		56A95D3C18E8A5780011B636 /* SynMediaAlternateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaAlternateImage.h; sourceTree = "<group>"; };
 		56A95D3D18E8A5780011B636 /* SynMediaAlternateImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynMediaAlternateImage.m; sourceTree = "<group>"; };
 		56A95D6618ECD4F80011B636 /* SynMediaAlternateImageResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynMediaAlternateImageResults.h; sourceTree = "<group>"; };
@@ -359,8 +382,7 @@
 		5616826118D2682400120CE4 /* SyndicationTests */ = {
 			isa = PBXGroup;
 			children = (
-				5616826718D2682400120CE4 /* SyndicationTests.m */,
-				56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */,
+				56722BD21906C05300BDB765 /* Tests */,
 				5616826218D2682400120CE4 /* Supporting Files */,
 			);
 			path = SyndicationTests;
@@ -369,6 +391,8 @@
 		5616826218D2682400120CE4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56722BC61906B00600BDB765 /* XCTestCase+AsyncTesting.h */,
+				56722BC71906B00600BDB765 /* XCTestCase+AsyncTesting.m */,
 				5616826318D2682400120CE4 /* SyndicationTests-Info.plist */,
 				5616826418D2682400120CE4 /* InfoPlist.strings */,
 			);
@@ -444,8 +468,6 @@
 				56A95D7818EDB1BE0011B636 /* SynMediaRating.m */,
 				56A95D7B18EDB21E0011B636 /* SynMediaRatingResults.h */,
 				56A95D7C18EDB21E0011B636 /* SynMediaRatingResults.m */,
-				56A95D3818E621D80011B636 /* SynMediaTags.h */,
-				56A95D3918E621D80011B636 /* SynMediaTags.m */,
 				56A95CC218E5AFA00011B636 /* SynMediaResults.h */,
 				56A95CC318E5AFA00011B636 /* SynMediaResults.m */,
 			);
@@ -474,6 +496,8 @@
 		565C9FF718E46F0A00580420 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				56722C02190EBC1B00BDB765 /* SynMessage.h */,
+				56722C03190EBC1B00BDB765 /* SynMessage.m */,
 				565C9FF318E46EAB00580420 /* SynPagination.h */,
 				565C9FF418E46EAB00580420 /* SynPagination.m */,
 				560D0B3D1901A41800387461 /* SynMetaData.h */,
@@ -542,6 +566,32 @@
 			name = Subclasses;
 			sourceTree = "<group>";
 		};
+		56722BD21906C05300BDB765 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				56722BCC1906BDEC00BDB765 /* SyndicationTestCampaigns.m */,
+				56722BCE1906BEC600BDB765 /* SyndicationTestLanguages.m */,
+				56722BC41906AD5F00BDB765 /* SyndicationTestMedia.m */,
+				56722BCA1906BC3700BDB765 /* SyndicationTestMediaTypes.m */,
+				56722BD01906BFDB00BDB765 /* SyndicationTestSources.m */,
+				56722C06190EC32B00BDB765 /* SyndicationTestTags.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		56722BF2190EAA0900BDB765 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				56722BF6190EAA9500BDB765 /* SynTag.h */,
+				56722BF7190EAA9500BDB765 /* SynTag.m */,
+				56722BFE190EAD6700BDB765 /* SynTagType.h */,
+				56722BFF190EAD6700BDB765 /* SynTagType.m */,
+				56722BFA190EAB3C00BDB765 /* SynTagResults.h */,
+				56722BFB190EAB3C00BDB765 /* SynTagResults.m */,
+			);
+			name = Tags;
+			sourceTree = "<group>";
+		};
 		56A95CD018E5C05A0011B636 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +630,7 @@
 				5628C57618E4AAE2007714E7 /* MediaTypes */,
 				565C9FF718E46F0A00580420 /* Meta */,
 				56A95D8918EDCE800011B636 /* Sources */,
+				56722BF2190EAA0900BDB765 /* Tags */,
 			);
 			name = "Syndication Objects";
 			sourceTree = "<group>";
@@ -608,7 +659,10 @@
 				565C9FE318DA152600580420 /* SynResults.h in Headers */,
 				56722BBC1906A82400BDB765 /* SynMediaWidget.h in Headers */,
 				56722BB81906A7AF00BDB765 /* SynMediaSocialMedia.h in Headers */,
+				56722C00190EAD6700BDB765 /* SynTagType.h in Headers */,
+				56722BFC190EAB3C00BDB765 /* SynTagResults.h in Headers */,
 				56A95D3218E6017B0011B636 /* SynMediaVideo.h in Headers */,
+				56722BF8190EAA9500BDB765 /* SynTag.h in Headers */,
 				5628C57918E4AAFE007714E7 /* SynMediaTypeResults.h in Headers */,
 				56A95CD318E5C0950011B636 /* SynMediaImage.h in Headers */,
 				56722BB41906A75800BDB765 /* SynMediaInfographic.h in Headers */,
@@ -622,13 +676,13 @@
 				56A95D8C18EDCEF40011B636 /* SynSource.h in Headers */,
 				5628C57D18E4AB29007714E7 /* SynMediaType.h in Headers */,
 				565C9FEA18DA163C00580420 /* SynLanguageResults.h in Headers */,
+				56722C04190EBC1B00BDB765 /* SynMessage.h in Headers */,
 				56A95D8718EDC7910011B636 /* SynCampaignResults.h in Headers */,
 				56A95D7418EDA9BF0011B636 /* SynMediaEmbedResults.h in Headers */,
 				565C9FF118DA269300580420 /* SynLanguage.h in Headers */,
 				56A95D8318EDC68C0011B636 /* SynCampaign.h in Headers */,
 				56A95D7D18EDB21E0011B636 /* SynMediaRatingResults.h in Headers */,
 				56A95D3E18E8A5780011B636 /* SynMediaAlternateImage.h in Headers */,
-				56A95D3A18E621D80011B636 /* SynMediaTags.h in Headers */,
 				56A95D7918EDB1BE0011B636 /* SynMediaRating.h in Headers */,
 				56A95D1718E5EE590011B636 /* SynMediaResults.h in Headers */,
 				560D0B3F1901A41800387461 /* SynMetaData.h in Headers */,
@@ -810,8 +864,8 @@
 				56722BBD1906A82400BDB765 /* SynMediaWidget.m in Sources */,
 				5645959F18E50B5E00393C86 /* SynMediaHTML.m in Sources */,
 				56A95D9118EDCFC00011B636 /* SynSourceResults.m in Sources */,
-				56A95D3B18E621D80011B636 /* SynMediaTags.m in Sources */,
 				5628C57E18E4AB29007714E7 /* SynMediaType.m in Sources */,
+				56722C05190EBC1B00BDB765 /* SynMessage.m in Sources */,
 				56A95D8818EDC7910011B636 /* SynCampaignResults.m in Sources */,
 				560D0B401901A41800387461 /* SynMetaData.m in Sources */,
 				56A95D3318E6017B0011B636 /* SynMediaVideo.m in Sources */,
@@ -819,6 +873,7 @@
 				56722BA91906A20500BDB765 /* SynMediaCollection.m in Sources */,
 				56722BB91906A7AF00BDB765 /* SynMediaSocialMedia.m in Sources */,
 				56A95D8418EDC68C0011B636 /* SynCampaign.m in Sources */,
+				56722BFD190EAB3C00BDB765 /* SynTagResults.m in Sources */,
 				56A95D7118EDA9230011B636 /* SynMediaEmbed.m in Sources */,
 				565C9FEB18DA163C00580420 /* SynLanguageResults.m in Sources */,
 				56A95D6918ECD4F80011B636 /* SynMediaAlternateImageResults.m in Sources */,
@@ -828,6 +883,8 @@
 				565C9FE418DA152600580420 /* SynResults.m in Sources */,
 				56A95CCD18E5B5DF0011B636 /* NSString+Equality.m in Sources */,
 				5628C57A18E4AAFE007714E7 /* SynMediaTypeResults.m in Sources */,
+				56722BF9190EAA9500BDB765 /* SynTag.m in Sources */,
+				56722C01190EAD6700BDB765 /* SynTagType.m in Sources */,
 				56B4EB6318F320BF00A99879 /* SynErrors.m in Sources */,
 				565C9FF618E46EAB00580420 /* SynPagination.m in Sources */,
 				56A95D7A18EDB1BE0011B636 /* SynMediaRating.m in Sources */,
@@ -841,8 +898,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56722BD11906BFDB00BDB765 /* SyndicationTestSources.m in Sources */,
+				56722BCF1906BEC600BDB765 /* SyndicationTestLanguages.m in Sources */,
+				56722C07190EC32B00BDB765 /* SyndicationTestTags.m in Sources */,
+				56722BCB1906BC3700BDB765 /* SyndicationTestMediaTypes.m in Sources */,
+				56722BCD1906BDEC00BDB765 /* SyndicationTestCampaigns.m in Sources */,
 				56722BC51906AD5F00BDB765 /* SyndicationTestMedia.m in Sources */,
-				5616826818D2682400120CE4 /* SyndicationTests.m in Sources */,
+				56722BC81906B00600BDB765 /* XCTestCase+AsyncTesting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1075,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SyndicationTests/SyndicationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1029,6 +1098,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Syndication/Syndication-Prefix.pch";
 				INFOPLIST_FILE = "SyndicationTests/SyndicationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

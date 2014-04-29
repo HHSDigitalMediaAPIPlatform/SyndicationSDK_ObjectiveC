@@ -30,8 +30,8 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynCampaignResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getCampaignsWithOptions:(NSDictionary *)options
-                         success:(void (^)(SynCampaignResults *campaignResults))success
-                         failure:(void (^)(SynCampaignResults *campaignResults, NSError *error))failure;
+                         success:(void (^)(SynCampaignResults *results))success
+                         failure:(void (^)(SynCampaignResults *results, NSError *error))failure;
 
 /**
  Request a specific campaign object from the Syndication API by campaign Id
@@ -41,7 +41,7 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynCampaignResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getCampaignById:(NSUInteger)campaignId
-                 success:(void (^)(SynCampaignResults *mediaResults))success
-                 failure:(void (^)(SynCampaignResults *mediaResults, NSError *error))failure;
+                 success:(void (^)(SynCampaignResults *results))success
+                 failure:(void (^)(SynCampaignResults *results, NSError *error))failure;
 
 @end

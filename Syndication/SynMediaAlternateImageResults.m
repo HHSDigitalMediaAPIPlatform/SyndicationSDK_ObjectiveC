@@ -21,8 +21,8 @@
 #pragma mark - methods
 
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
-                                  success:(void (^)(SynMediaAlternateImageResults *alternateImageResults))success
-                                  failure:(void (^)(SynMediaAlternateImageResults *alternateImageResults, NSError *error))failure
+                                  success:(void (^)(SynMediaAlternateImageResults *results))success
+                                  failure:(void (^)(SynMediaAlternateImageResults *results, NSError *error))failure
 {
     [RKObjectManager.sharedManager getObjectsAtPath:[NSString stringWithFormat:@"resources/media/%lu/alternateImages.json", (unsigned long)mediaId]
                                          parameters:nil

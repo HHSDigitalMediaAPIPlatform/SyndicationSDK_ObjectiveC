@@ -22,7 +22,7 @@
  @param failure A block object to be executed when the request operation finished unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.  This block has no return value and takes two arguments: the `SynMediaAlternateImageResults` object that was created and the `NSError` object describing the network or parsing error that occurred.
  */
 - (void) getMediaAlternateImagesByMediaId:(NSUInteger)mediaId
-                                  success:(void (^)(SynMediaAlternateImageResults *alternateImageResults))success
-                                  failure:(void (^)(SynMediaAlternateImageResults *alternateImageResults, NSError *error))failure;
+                                  success:(void (^)(SynMediaAlternateImageResults *results))success
+                                  failure:(void (^)(SynMediaAlternateImageResults *results, NSError *error))failure;
 
 @end
