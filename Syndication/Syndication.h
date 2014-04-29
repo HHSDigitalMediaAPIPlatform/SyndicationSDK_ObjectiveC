@@ -14,9 +14,9 @@
 @class SynTagResults;
 
 // Base URL to the Syndication API (this can be overridden)
-#define SYNDICAITON_PRODUCTION_BASE_URL @"https://api.hhs.gov/Syndication"
+#define SYNDICATION_PRODUCTION_BASE_URL @"https://api.hhs.gov/Syndication"
 #define SYNDICATION_DEV_BASE_URL        @"http://ctacdev.com:8090/Syndication"
-#define SYNDICATION_BASE_URL            SYNDICATION_DEV_BASE_URL
+#define SYNDICATION_BASE_URL            SYNDICATION_PRODUCTION_BASE_URL
 
 // This SDK can speak to v2 of the Syndication API
 #define SYNDICATION_API_VERSION         @"v2"
